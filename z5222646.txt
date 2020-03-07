@@ -1,0 +1,21 @@
+
+WEEK01 
+Group formed. 
+But we still have three people in our group, so we sent out emails and made a post on WebCMS forum to seek for more group members.
+Decision made on project7. (E-commerce)
+
+
+WEEK02
+Created a google doc to write our proposal.
+Created jira account.
+Setup github classroom account.
+Brainstorm ideas on our project.
+Decided to create a platform for UNSW students to buy second handed textbooks.
+
+
+WEEK03
+Had a group meeting on March 3rd. 
+Started working on problem domain, aim, epic part of the proposal.
+During the lab session on Wednesday, we received feedbacks on our proposal from the tutor.
+Had another group meeting on March 6th. Completed our proposal based on the feedback and submitted.
+I worked on problem domain, epic, and created our website prototype (System modules and flow).
