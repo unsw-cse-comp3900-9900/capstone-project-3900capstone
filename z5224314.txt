@@ -1,1 +1,8 @@
-Week1
+Week 1
+We formed our project group, and together decided to work on project 7 (E-commerce website).
+
+Week 2
+We decided to build a website to sell second hand textbooks to UNSW students. We started working on our proposal and came up with the epic section.
+
+Week 3
+We finalized our project proposal. I edited some user stories in the epic section to fit the final proposal. I also created an ER diagram for the proposal.
