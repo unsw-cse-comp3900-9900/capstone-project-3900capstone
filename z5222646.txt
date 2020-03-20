@@ -19,3 +19,14 @@ Started working on problem domain, aim, epic part of the proposal.
 During the lab session on Wednesday, we received feedbacks on our proposal from the tutor.
 Had another group meeting on March 6th. Completed our proposal based on the feedback and submitted.
 I worked on problem domain, epic, and created our website prototype (System modules and flow).
+
+WEEK04
+Had a group meeting on March 9th.
+We discussed on how should we devide tasks and where to start(from frontend or backend).
+We couldn't come up with an idea so we leaved it to ask the tutor.
+During the lab, we had 2 more student joined our group fortunately.
+
+
+WEEK05
+We made decision on who to work on backand and frontend.
+We are now done with user story 1 and 2 from epic 1, which is CRUD of the user account.
