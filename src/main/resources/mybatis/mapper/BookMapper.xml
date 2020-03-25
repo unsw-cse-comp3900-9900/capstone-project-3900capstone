@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.BookMapper">
+
+    <select id="queryBooksList" resultType="Books">
+        select * from project.books
+    </select>
+
+    <select id="queryBooksById" resultType="Books">
+        select * from books where bookId = #{bookId}
+    </select>
+
+
+    <select id="queryBooksByBookname" resultType="Books">
+        select * from books where bookName = #{bookName}
+    </select>
+
+
+    <select id="addBook" parameterType="Books">
+        insert into books (bookName, price, bookCounts, detail, publisher, author, photoAddress, clickTime, classId, adminId)
+        values (#{bookName}, #{price}, #{bookCounts}, #{detail}, #{publisher}, #{author}, #{photoAddress}, #{clickTime}, #{classId}, #{adminId})
+    </select>
+
+    <select id="updateBook" parameterType="Books">
+        update books set bookName = #{bookName}, price = #{price}, detail = #{detail}, publisher = #{publisher}, author = #{author},
+        photoAddress = #{photoAddress}, clickTime = #{clickTime}, classId = #{classId}, adminId = #{adminId}
+        where bookId = #{bookId}
+    </select>
+
+    <select id="deleteBook" parameterType="Books">
+        delete from books where bookId = #{bookId}
+    </select>
+
+</mapper>

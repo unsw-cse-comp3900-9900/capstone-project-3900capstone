@@ -17,6 +17,14 @@
         select * from user where email = #{email}
     </select>
 
+    <select id="queryUsersByUsername" resultType="Users">
+        select * from user where userName = #{userName}
+    </select>
+
+    <select id="queryUsersByzId" resultType="Users">
+        select * from user where zId = #{zId}
+    </select>
+
     <select id="addUser" parameterType="Users">
         insert into user (zId, userName, userPwd, phone, email, major, address)
         values (#{zId}, #{userName}, #{userPwd}, #{phone}, #{email}, #{major}, #{address})
