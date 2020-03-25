@@ -1,0 +1,23 @@
+Week 1
+We assigned the group in the first week，and together decided to work on project 7 (E-commerce website).
+
+Week 2
+Had a group meeting in the main library.
+We do the proposal plan together
+We decided to build a website to sell second hand textbooks to UNSW students. 
+We talk with the tutor about our idea and what function we needed.
+Setup GitHub
+Setup jira
+
+Week 3
+Had a group meeting in the main library.
+we finished the proposal and submit.
+During the lab session on Wednesday, our tutor tell us where is not well about our proposal.
+We decided which part started about our user story.
+
+Week 4 
+Had a group meeting in the main library.
+During the lab, we had 2 more student joined our group fortunately.
+
+Week 5
+
