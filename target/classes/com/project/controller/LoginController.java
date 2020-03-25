@@ -21,11 +21,7 @@ public class LoginController {
     @Autowired
     UserServiceImpl userService;
 
-    @RequestMapping("/loginPage")
-    public String login()
-    {
-        return "redirect:/login.html";
-    }
+
 
 
 
