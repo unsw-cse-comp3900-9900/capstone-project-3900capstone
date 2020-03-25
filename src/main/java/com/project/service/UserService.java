@@ -12,11 +12,15 @@ public interface UserService {
 
     Users queryUsersByEmail(String email);
 
-    int addUser(Users user);
+    Users queryUsersByUsername(String userName);
 
-    int updateUser(Users user);
+    Users queryUsersByzId(Integer zId);
 
-    int deleteUser(int id);
+    Integer addUser(Users user);
+
+    Integer updateUser(Users user);
+
+    Integer deleteUser(int id);
 
     String getAuth(String email);
 

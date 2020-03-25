@@ -25,22 +25,32 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Users queryUsersByUsername(String userName) {
+        return userMapper.queryUsersByUsername(userName);
+    }
+
+    @Override
+    public Users queryUsersByzId(Integer zId) {
+        return userMapper.queryUsersByzId(zId);
+    }
+
+    @Override
     public Users queryUsersByEmail(String email) {
         return userMapper.queryUsersByEmail(email);
     }
 
     @Override
-    public int addUser(Users user) {
+    public Integer addUser(Users user) {
         return userMapper.addUser(user);
     }
 
     @Override
-    public int updateUser(Users user) {
+    public Integer updateUser(Users user) {
          return userMapper.updateUser(user);
     }
 
     @Override
-    public int deleteUser(int id) {
+    public Integer deleteUser(int id) {
         return userMapper.deleteUser(id);
     }
 
