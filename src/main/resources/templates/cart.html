@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Real state</title>
+    <title>Your Cart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -103,23 +103,27 @@
         <div class="whole-wrap">
         	<div class="container box_1170">    
 		  		<div class="section-top-border">
+		  			<!--/*@thymesVar id="list" type="List<Cart>"*/-->
 		  			<div th:switch="${list}">
 		  				<div>
 		  					<h2 th:case="null">No Item Yet</h2>
-		  					<div>
+		  					<div th:case="*">
 		  						<table class="table table-striped table-responsive-md">
 		  							<thead>
 		  								<tr>
 		  									<th>Book Title</th>
-		  									<th>Qty</th>
+		  									<th>Author</th>
+                                            <th>Qty</th>
 		  									<th>Price</th>
 		  								</tr>
 		  							</thead>
 		  							<tbody>
 		  								<tr th:each="item : ${list}">
-		  									<td th:text="item.bookName"></td>
-		  									<td>1</td>
-		  									<td th:text="item.price"></td>
+		  									<!--/*@thymesVar id="bookName" type="String"*/-->
+		  									<td th:text="${item.bookName}"></td>
+		  									<td th:text="${item.author}"></td>
+                                            <td>1</td>
+		  									<td th:text="${item.price}"></td>
 		  								</tr>
 		  							</tbody>
 		  						</table>
