@@ -40,6 +40,7 @@ public class ShiroConfig {
         filterMap.put("/singleBlog.html","perms[admin]");
         filterMap.put("/elements.html","authc");
         filterMap.put("/logout","logout");
+        filterMap.put("/main.html","authc");
 
 
 

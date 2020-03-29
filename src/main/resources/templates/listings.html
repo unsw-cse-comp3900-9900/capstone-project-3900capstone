@@ -8,32 +8,32 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- <link rel="manifest" th:href="@{ite.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{img/favicon.png}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{css/jquery-ui.css}">
+    <link rel="stylesheet" th:href="@{css/gijgo.css}">
+    <link rel="stylesheet" th:href="@{css/animate.css}">
+    <link rel="stylesheet" th:href="@{css/slick.css}">
+    <link rel="stylesheet" th:href="@{css/slicknav.css}">
+    <link rel="stylesheet" th:href="@{https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css}">
 
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <!-- <link rel="stylesheet" th:href="@{ss/responsive.css}"> -->
 </head>
 
 <body>
     <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a th:href="@{ttps://browsehappy.com/}">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
     <!-- header-start -->
@@ -50,23 +50,23 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a href="index.html">home</a></li>
-                                                <li><a href="listings.html">Listings</a></li>
-                                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <li><a th:href="@{/main.html}">Home</a></li>
+                                                <li><a th:href="@{/listings.html}">Listings</a></li>
+                                                <li><a th:href="@{#}">pages <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
                                                         
-                                                        <li><a href="elements.html">elements</a></li>
-                                                        <li><a href="singleListing.html">Single listing</a></li>
+                                                        <li><a th:href="@{/elements.html}">elements</a></li>
+                                                        <li><a th:href="@{/singleListing.html}">Single listing</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="unauth.html">about</a></li>
-                                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <li><a th:href="@{/unauth}">about</a></li>
+                                                <li><a th:href="@{#}">blog <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">blog</a></li>
-                                                        <li><a href="singleBlog.html">single-blog</a></li>
+                                                        <li><a th:href="@{/blog.html}">blog</a></li>
+                                                        <li><a th:href="@{/singleBlog.html}">single-blog</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a th:href="@{/contact.html}">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -99,7 +99,7 @@
                         <div class="slider_text text-center justify-content-center">
                             <h3>Our Book Listings</h3>
                             <div class="search_form">
-                                <form action="#">
+                                <form th:action="@{/onlySearch}">
                                     <div class="row align-items-center">
                                         <div class="col-xl-5 col-md-4">
                                             <div class="input_field">
@@ -168,17 +168,20 @@
                                                             <option value="2">A3</option>
                                                           </select>
                                             </div>
+
+                                            <div class="last_range">
+
+                                                <button class="boxed-btn2" >Submit</button>
+                                            </div>
                                             
                                         </form>
                                     </div>
-                                    <div class="last_range">
-                            
-                                        <button class="boxed-btn2" >Submit</button>
-                                    </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8 col-lg-8">
+
+                <div class="col-xl-8 col-lg-8" th:each="bk:${bks}">
                         <h3 class="exp_title">10 Book listings are available</h3>
                         <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
@@ -191,7 +194,7 @@
                                                 <i class="flaticon-beach"></i>
                                             </div>
                                             <div class="explorer_info">
-                                                <h3><a href="singleListing.html">Introduction to Cryptography</a></h3>
+                                                <h3><a th:href="@{/singleListing.html}"> [[${bk.getBookName()}]] </a></h3>
                                                 <p>Alexander Stanoyevitch</p>
                                             </div>
                                         </div>
@@ -207,12 +210,14 @@
                                                 <i class="flaticon-food"></i>
                                             </div>
                                             <div class="explorer_info">
-                                                <h3><a href="singleListing.html">Industrial and Systems Engineering</a></h3>
+                                                <h3><a th:href="@{/singleListing.html}">[[${bk.getBookName()}]]</a></h3>
                                                 <p>Adedeji B. Badiru</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="single_explorer">
                                         <div class="thumb">
@@ -223,12 +228,14 @@
                                                 <i class="flaticon-food-1"></i>
                                             </div>
                                             <div class="explorer_info">
-                                                <h3><a href="singleListing.html">Book Title 3</a></h3>
+                                                <h3><a th:href="@{/singleListing.html}">[[${bk.getBookName()}]]</a></h3>
                                                 <p>Author 3</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="single_explorer">
                                         <div class="thumb">
@@ -239,7 +246,7 @@
                                                 <i class="flaticon-barbershop"></i>
                                             </div>
                                             <div class="explorer_info">
-                                                <h3><a href="singleListing.html">Book Title 4</a></h3>
+                                                <h3><a th:href="@{/singleListing.html}">Book Title 4</a></h3>
                                                 <p>Author 4</p>
                                             </div>
                                         </div>
@@ -251,16 +258,16 @@
                             <div class="page_nation text-center">
                                 <ul>
                                     <li>
-                                        <a href="#">01</a>
+                                        <a th:href="@{#}">01</a>
                                     </li>
                                     <li>
-                                        <a href="#">02</a>
+                                        <a th:href="@{#}">02</a>
                                     </li>
                                     <li>
-                                        <a href="#">03</a>
+                                        <a th:href="@{#}">03</a>
                                     </li>
                                     <li>
-                                        <a href="#"> <i class="ti-angle-right"></i> </a>
+                                        <a th:href="@{#}"> <i class="ti-angle-right"></i> </a>
                                     </li>
                                 </ul>
                             </div>

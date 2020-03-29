@@ -62,7 +62,7 @@ public class SignupController {
             else
             {
 
-                userService.addUser(new Users(null, zId, userName, password, 0, email, "", "", "0"));
+                userService.addUser(new Users(null, zId, userName, password, 0, email, "", "", "user"));
                 return "redirect:/login.html";
             }
 

@@ -14,6 +14,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class LoginController {
 
@@ -39,7 +41,7 @@ public class LoginController {
 
         try {
             subject.login(token);
-            return "redirect:/listings.html";
+            return "redirect:/main.html";
         }
         catch (IncorrectCredentialsException e){
             model.addAttribute("msg", "Invalid Username or Password");
@@ -61,6 +63,18 @@ public class LoginController {
 
 
         return "unauth";
+    }
+
+
+    @RequestMapping("/lists")
+    public String show(Model model)
+    {
+
+        List<Users> usersList = userService.queryUsersList();
+        model.addAttribute("bks", usersList);
+
+
+        return "listings";
     }
 
 
