@@ -30,3 +30,8 @@ During the lab, we had 2 more student joined our group fortunately.
 WEEK05
 We made decision on who to work on backand and frontend.
 We are now done with user story 1 and 2 from epic 1, which is CRUD of the user account.
+
+WEEK06
+After the mentoring session on wednesday, instead of dividing works by backend and frontend,
+we splitted up our work by pages.
+i.e one work on page for admin to add book, cart page, and successful payment detail page.
