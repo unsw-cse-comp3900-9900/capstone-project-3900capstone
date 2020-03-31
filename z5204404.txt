@@ -20,4 +20,6 @@ Had a group meeting in the main library.
 During the lab, we had 2 more student joined our group fortunately.
 
 Week 5
-
+i design the login websit
+week 6
+i work on the admin manage book such as add book, remove book.
