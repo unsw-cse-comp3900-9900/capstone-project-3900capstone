@@ -13,7 +13,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
     <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
     <link rel="stylesheet" th:href="@{css/font-awesome.min.css}">
@@ -50,7 +50,7 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a href="index.html">home</a></li>
+                                                <li><a href="main.html">home</a></li>
                                                 <li><a href="listings.html">Listings</a></li>
                                                 <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
@@ -66,7 +66,8 @@
                                                         <li><a href="singleBlog.html">single-blog</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a th:href="@{/contact.html}">Contact</a></li>
+                                                <li><a th:href="@{/cart.html}">My Cart</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -100,7 +101,7 @@
                     </div>
                 </div>
             </div>
-        <div class="whole-wrap">
+    <div class="whole-wrap">
         	<div class="container box_1170">    
 		  		<div class="section-top-border">
 		  			<!--/*@thymesVar id="list" type="List<Cart>"*/-->
@@ -115,19 +116,42 @@
 		  									<th>Author</th>
                                             <th>Qty</th>
 		  									<th>Price</th>
+                                            <th></th>
 		  								</tr>
 		  							</thead>
 		  							<tbody>
 		  								<tr th:each="item : ${list}">
 		  									<!--/*@thymesVar id="bookName" type="String"*/-->
-		  									<td th:text="${item.bookName}"></td>
+                                            <td th:text="${item.bookName}"></td>
 		  									<td th:text="${item.author}"></td>
                                             <td>1</td>
 		  									<td th:text="${item.price}"></td>
+                                            <td width="174px">
+                                                <a th:href="@{/delete/{ubId}(ubId=${item.ubId})}"
+                                                   class="genric-btn danger radius" style="float: right ">
+                                                    Remove
+                                                </a>
+                                            </td>
 		  								</tr>
+                                        <tr style="background-color: white">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr style="background-color: white">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <a th:href="@{/confirmation}" class="genric-btn info radius" style="width:111.25px; float:right">Checkout</a>
+                                            </td>
+                                        </tr>
 		  							</tbody>
 		  						</table>
-		  						<a th:href="@{/logout}" class="genric-btn info radius" style="float:right">Checkout</a>
+                                <br/>
 		  					</div>
 		  				</div>
 		  			</div>

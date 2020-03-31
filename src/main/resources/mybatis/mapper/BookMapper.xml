@@ -34,4 +34,12 @@
         delete from books where bookId = #{bookId}
     </select>
 
+    <select id="queryCartByuserId" resultType="java.util.HashMap">
+        select u.ubId, b.bookName, b.author, b.price from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId}
+    </select>
+
+    <select id="deleteCartById">
+        delete from user_books where ubId = #{ubId}
+    </select>
+
 </mapper>

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 @Mapper
@@ -24,5 +25,7 @@ public interface BookMapper {
 
     Integer deleteBook(int id);
 
+    List<HashMap> queryCartByuserId(int id);
 
+    Integer deleteCartById(int id);
 }
