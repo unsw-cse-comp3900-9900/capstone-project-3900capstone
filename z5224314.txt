@@ -5,4 +5,13 @@ Week 2
 We decided to build a website to sell second hand textbooks to UNSW students. We started working on our proposal and came up with the epic section.
 
 Week 3
-We finalized our project proposal. I edited some user stories in the epic section to fit the final proposal. I also created an ER diagram for the proposal.
+We finalised our project proposal. I edited some user stories in the epic section to fit the final proposal. I also created an ER diagram for the proposal.
+
+Week 4
+We set up our project environment, including frameworks and database.
+
+Week 5
+We split work into frontend and backend, finished working on user authentications.
+
+Week 6
+We decide to change our work division from frontend/backend to each one work on a single part. I started working on cart page.
