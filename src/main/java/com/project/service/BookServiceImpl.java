@@ -15,8 +15,13 @@ public class BookServiceImpl implements BookService{
     BookMapper bookMapper;
 
     @Override
-    public List<Books> queryBooksList() {
-        return bookMapper.queryBooksList();
+    public List<Books> queryBooksList(int first, int second) {
+        return bookMapper.queryBooksList(first, second);
+    }
+
+    @Override
+    public List<Books> fuzzyQuery(String bookName, String author, String publisher, int first, int second) {
+        return bookMapper.fuzzyQuery(bookName, author, publisher, first, second);
     }
 
     @Override

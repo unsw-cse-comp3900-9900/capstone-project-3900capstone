@@ -13,7 +13,9 @@ import java.util.List;
 @Repository
 public interface BookMapper {
 
-    List<Books> queryBooksList();
+    List<Books> queryBooksList(int first, int second);
+
+    List<Books> fuzzyQuery(String bookName, String author, String publisher, int first, int second);
 
     Books queryBooksById(int id);
 
