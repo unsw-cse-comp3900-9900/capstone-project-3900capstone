@@ -66,16 +66,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping("/lists")
-    public String show(Model model)
-    {
 
-        List<Users> usersList = userService.queryUsersList();
-        model.addAttribute("bks", usersList);
-
-
-        return "listings";
-    }
 
 
 }
