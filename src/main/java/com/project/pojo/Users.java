@@ -18,7 +18,4 @@ public class Users {
     private String address;
     private String auth;
 
-    public Integer getUserId() {
-        return this.userId;
-    }
 }

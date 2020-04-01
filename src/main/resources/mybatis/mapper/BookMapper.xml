@@ -6,8 +6,17 @@
 <mapper namespace="com.project.mapper.BookMapper">
 
     <select id="queryBooksList" resultType="Books">
-        select * from project.books
+        select * from project.books LIMIT #{first}, #{second}
     </select>
+
+    <select id="fuzzyQuery" resultType="Books">
+        select * from project.books
+        where bookName LIKE #{bookName}
+        OR author LIKE #{author}
+        OR publisher LIKE #{publisher}
+        LIMIT #{first}, #{second}
+    </select>
+
 
     <select id="queryBooksById" resultType="Books">
         select * from books where bookId = #{bookId}
@@ -32,14 +41,6 @@
 
     <select id="deleteBook" parameterType="Books">
         delete from books where bookId = #{bookId}
-    </select>
-
-    <select id="queryCartByuserId" resultType="java.util.HashMap">
-        select u.ubId, b.bookName, b.author, b.price from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId}
-    </select>
-
-    <select id="deleteCartById">
-        delete from user_books where ubId = #{ubId}
     </select>
 
 </mapper>
