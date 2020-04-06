@@ -1,0 +1,221 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Book</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" th:href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{img/favicon.png}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{css/gijgo.css}">
+    <link rel="stylesheet" th:href="@{css/animate.css}">
+    <link rel="stylesheet" th:href="@{css/slick.css}">
+    <link rel="stylesheet" th:href="@{css/slicknav.css}">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <!-- <link rel="stylesheet" th:href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid ">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <p style="color: white"> Hi, Yi!</p>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a th:href="@{/main.html}">Home</a></li>
+                                            <li><a th:href="@{/listings}">Listings</a></li>
+                                            <li><a th:href="@{#}">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+
+                                                    <li><a th:href="@{/elements.html}">elements</a></li>
+                                                    <li><a th:href="@{/singleListing.html}">Single listing</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a th:href="@{/unauth}">about</a></li>
+                                            <li><a th:href="@{#}">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a th:href="@{/blog.html}">blog</a></li>
+                                                    <li><a th:href="@{/singleBlog.html}">single-blog</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a th:href="@{/cart}">My Cart</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a th:href="@{/logout}">Sign Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="slider_text text-center justify-content-center">
+
+                            <p>Find Second-handed textbooks</p>
+                            <h3>Find Second-handed textbooks</h3>
+                            <div class="search_form">
+                                <form th:action="@{/onlySearch}">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-5 col-md-4">
+                                            <div class="input_field">
+                                                <input type="text" placeholder="What are you finding?" name="search">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-md-4">
+                                        </div>
+                                        <div class="col-xl-3 col-md-4">
+                                            <div class="button_search">
+                                                <button class="boxed-btn2" type="submit">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="quality">
+                                <ul>
+                                    <li>
+                                        <button>COMP3331</button>
+                                    </li>
+                                    <li>
+                                        <button>Business School</button>
+                                    </li>
+                                    <li>
+                                        <button>Data Structures and Algorithms</button>
+                                    </li>
+                                    <li>
+                                        <button>Law</button>
+                                    </li>
+                                    <li>
+                                        <button>COMM3654</button>
+                                    </li>
+                                    <li>
+                                        <button>COMP1511</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <div class="popular_catagory_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title mb-60 text-center">
+                        <p>Discover</p>
+                        <h3>
+                            Trending Books
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-md-4 col-lg-3">
+                    <div class="single_catagory">
+                        <div class="thumb">
+                            <img src="img/catagory/1.png" alt="">
+                        </div>
+                        <div class="hover_overlay">
+                            <div class="hover_inner">
+                                <a th:href="@{/listings.html}"><h4>COMP1511</h4></a>
+                                <span>add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-lg-3">
+                    <div class="single_catagory">
+                        <div class="thumb">
+                            <img src="img/catagory/2.png" alt="">
+                        </div>
+                        <div class="hover_overlay">
+                            <div class="hover_inner">
+                                <a th:href="@{listings.html}"><h4>LAW3455</h4></a>
+                                <span>add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-lg-3">
+                    <div class="single_catagory">
+                        <div class="thumb">
+                            <img src="img/catagory/3.png" alt="">
+                        </div>
+                        <div class="hover_overlay">
+                            <div class="hover_inner">
+                                    <a th:href="@{listings.html}"><h4>FINS4343</h4></a>
+                                <span>add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-4 col-lg-3">
+                    <div class="single_catagory">
+                        <div class="thumb">
+                            <img src="img/catagory/4.png" alt="">
+                        </div>
+                        <div class="hover_overlay">
+                            <div class="hover_inner">
+                                    <a th:href="@{listings.html}"><h4>CRIM6534</h4></a>
+                                <span>05 Listings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+               
+            </div>
+        </div>
+    </div>
