@@ -5,6 +5,7 @@ import com.project.pojo.Books;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -46,5 +47,15 @@ public class BookServiceImpl implements BookService{
     @Override
     public Integer deleteBook(int id) {
         return bookMapper.deleteBook(id);
+    }
+
+    @Override
+    public List<HashMap> queryCartByUserId(int id) {
+        return bookMapper.queryCartByUserId(id);
+    }
+
+    @Override
+    public Integer deleteCartById(int id) {
+        return bookMapper.deleteCartById(id);
     }
 }

@@ -3,6 +3,7 @@ package com.project.service;
 import com.project.pojo.Books;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface BookService {
@@ -19,5 +20,9 @@ public interface BookService {
     Integer updateBook(Books book);
 
     Integer deleteBook(int id);
+
+    List<HashMap> queryCartByUserId(int id);
+
+    Integer deleteCartById(int id);
 
 }
