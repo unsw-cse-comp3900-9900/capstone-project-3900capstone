@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" th:href="@{site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" th:href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.png}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -32,7 +33,6 @@
 
 <body>
     <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a th:href="@{https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
 
@@ -59,14 +59,17 @@
                                                     <li><a th:href="@{/singleListing.html}">Single listing</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a th:href="@{/unauth}">about</a></li>
-                                            <li><a th:href="@{#}">blog <i class="ti-angle-down"></i></a>
+
+                                            <li><a th:href="@{/contact.html}">Contact</a></li>
+                                            <li><a th:href="@{/cart}">My Cart</a></li>
+
+                                            <li><a href="" shiro:hasPermission="admin">manage book <i class="ti-angle-down"></i></a >
                                                 <ul class="submenu">
-                                                    <li><a th:href="@{/blog.html}">blog</a></li>
-                                                    <li><a th:href="@{/singleBlog.html}">single-blog</a></li>
+
+                                                    <li><a th:href="@{/addBook.html}">add book</a ></li>
+                                                    <li><a th:href="@{/removeBook.html}">remove book</a ></li>
                                                 </ul>
                                             </li>
-                                            <li><a th:href="@{/contact.html}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -294,7 +297,7 @@
                         <h3>Sprayed Your Business with Us </h3>
                         <p>Esteem spirit temper too say adieus who direct esteem. It esteems luckily or picture placing
                             drawing <br> apartments frequently or motionless.</p>
-                        <a th:href="@{#" class="boxed-btn2">Add Your Business</a>
+                        <a th:href="@{#}" class="boxed-btn2">Add Your Business</a>
                     </div>
                 </div>
             </div>
@@ -469,7 +472,6 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a th:href="@{https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>

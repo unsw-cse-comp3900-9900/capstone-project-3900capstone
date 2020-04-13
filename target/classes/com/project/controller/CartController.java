@@ -29,6 +29,11 @@ public class CartController {
 
         if (cartList.size() != 0) {
             model.addAttribute("list", cartList);
+            Float total = 0.0F;
+            for (HashMap temp : cartList) {
+                total += (Float) temp.get("price");
+            }
+            model.addAttribute("total", total);
         }
         return "cart";
     }

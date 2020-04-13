@@ -4,37 +4,37 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Your Cart</title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- <link rel="manifest" th:href="@{ite.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.png}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
-    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
-    <link rel="stylesheet" th:href="@{css/font-awesome.min.css}">
-    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
-    <link rel="stylesheet" th:href="@{css/nice-select.css}">
-    <link rel="stylesheet" th:href="@{css/flaticon.css}">
-    <link rel="stylesheet" th:href="@{css/gijgo.css}">
-    <link rel="stylesheet" th:href="@{css/animate.css}">
-    <link rel="stylesheet" th:href="@{css/slick.css}">
-    <link rel="stylesheet" th:href="@{css/slicknav.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+    <link rel="stylesheet" th:href="@{/css/gijgo.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/slick.css}">
+    <link rel="stylesheet" th:href="@{/css/slicknav.css}">
     <link rel="stylesheet" th:href="@{https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css}">
 
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- <link rel="stylesheet" th:href="@{ss/responsive.css}"> -->
 </head>
 
 <body>
 <!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a th:href="@{ttps://browsehappy.com/}">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
-
 
 <!-- header-start -->
 <header>
@@ -50,24 +50,26 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a th:href="@{main.html}">home</a></li>
-                                        <li><a th:href="@{listings}">Listings</a></li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                        <li><a th:href="@{/main.html}">Home</a></li>
+                                        <li><a th:href="@{/listings}">Listings</a></li>
+                                        <li><a th:href="@{#}">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
 
-                                                <li><a th:href="@{elements.html}">elements</a></li>
-                                                <li><a th:href="@{singleListing.html}">Single listing</a></li>
+                                                <li><a th:href="@{/elements.html}">elements</a></li>
+                                                <li><a th:href="@{/singleListing}">Single listing</a></li>
                                             </ul>
                                         </li>
-                                        <li><a th:href="@{unauth}">about</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="singleBlog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
+
                                         <li><a th:href="@{/contact.html}">Contact</a></li>
                                         <li><a th:href="@{/cart}">My Cart</a></li>
+
+                                        <li>
+                                            <a href="" >manage book <i class="ti-angle-down"></i></a >
+                                            <ul class="submenu">
+                                                <li><a th:href="@{/add.html}">add book</a ></li>
+                                                <li><a th:href="@{/updateBookPage}">update book</a ></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>

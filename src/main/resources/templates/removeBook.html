@@ -36,19 +36,14 @@
         <div class="login100-more" style="background-image: url('signup/images/bg-01.jpg');"></div>
 
         <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-            <form class="login100-form validate-form" th:action="@{/signup}" method="post">
+            <form class="login100-form validate-form" th:action="@{/removeBook}" method="post">
                     <span class="login100-form-title p-b-59">
                         Remove book
                     </span>
 
-                <p class="container-login100-form-btn p-b-20" style="color: red; text-align: center" th:text="${msg}"
-                   th:if="${not #strings.isEmpty(msg)}"></p>
+<!--                <p class="container-login100-form-btn p-b-20" style="color: red; text-align: center" th:text="${msg}"-->
+<!--                   th:if="${not #strings.isEmpty(msg)}"></p>-->
 
-                <div class="wrap-input100 validate-input" data-validate="bookID is required">
-                    <span class="label-input100">bookID</span>
-                    <input class="input100" type="text" name="bookID" placeholder="BookID...">
-                    <span class="focus-input100"></span>
-                </div>
 
                 <div class="wrap-input100 validate-input" data-validate="bookName is required: ">
                     <span class="label-input100">bookName</span>
@@ -57,8 +52,8 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="detail is required">
-                    <span class="label-input100">why remove</span>
-                    <input class="input100" type="text" name="detail" placeholder="the book is sold out">
+                    <span class="label-input100">password</span>
+                    <input class="input100" type="text" name="password" placeholder="password">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="flex-m w-full p-b-33">

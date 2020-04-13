@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 
 <head>
     <meta charset="utf-8">
@@ -24,7 +25,7 @@
     <link rel="stylesheet" th:href="@{css/animate.css}">
     <link rel="stylesheet" th:href="@{css/slick.css}">
     <link rel="stylesheet" th:href="@{css/slicknav.css}">
-    <link rel="stylesheet" th:href="@{https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" th:href="@{https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css}">
 
     <link rel="stylesheet" th:href="@{css/style.css}">
     <!-- <link rel="stylesheet" th:href="@{css/responsive.css"> -->
@@ -32,7 +33,7 @@
 
 <body>
     <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a th:href="@{https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a th:href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
 
@@ -59,14 +60,17 @@
                                                     <li><a th:href="@{/singleListing.html}">Single listing</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a th:href="@{/unauth}">about</a></li>
-                                            <li><a th:href="@{#}">blog <i class="ti-angle-down"></i></a>
+
+                                            <li><a th:href="@{/contact.html}">Contact</a></li>
+                                            <li><a th:href="@{/cart}">My Cart</a></li>
+
+                                            <li><a href="" shiro:hasPermission="admin">manage book <i class="ti-angle-down"></i></a >
                                                 <ul class="submenu">
-                                                    <li><a th:href="@{/blog.html}">blog</a></li>
-                                                    <li><a th:href="@{/singleBlog.html}">single-blog</a></li>
+
+                                                    <li><a th:href="@{/addBook.html}">add book</a ></li>
+                                                    <li><a th:href="@{/removeBook.html}">remove book</a ></li>
                                                 </ul>
                                             </li>
-                                            <li><a th:href="@{/contact.html}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>

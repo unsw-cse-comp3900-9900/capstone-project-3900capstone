@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Books {
-    private int bookId;
+    private Integer bookId;
     private String bookName;
     private float price;
     private int bookCounts;
@@ -19,5 +19,6 @@ public class Books {
     private String photoAddress;
     private int clickTime;
     private String classId;
+    private Integer adminId;
 
 }

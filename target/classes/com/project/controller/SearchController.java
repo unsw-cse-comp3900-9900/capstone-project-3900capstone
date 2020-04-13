@@ -25,9 +25,9 @@ public class SearchController {
                              @RequestParam(required = false, name ="author") String author,
                              Model model)
     {
-        String bookName = "%" + search + "%";
-        publisher = "%" + publisher + "%";
-        author = "%" + author + "%";
+        String bookName = search + "%";
+        publisher = publisher + "%";
+        author = author + "%";
 
 //        if (publisher != null)
 //        {
@@ -48,27 +48,24 @@ public class SearchController {
 
 
 
-        if (bookName.equals("%%"))
+        if (bookName.equals("%"))
         {
-            bookName = "%null%";
+            bookName = "null%";
         }
 
-        if (publisher.equals("%%"))
+        if (publisher.equals("%"))
         {
-            publisher = "%null";
+            publisher = "null%";
         }
 
-        if (author.equals("%%"))
+        if (author.equals("%"))
         {
-            author = "%null%";
+            author = "null%";
         }
 
         int offset = 0;
         int limit = 4;
 
-        System.out.println(bookName);
-        System.out.println(publisher);
-        System.out.println(author);
 
 
         List<Books> booksList = bookService.fuzzyQuery(bookName, author, publisher, offset, limit);
@@ -87,7 +84,6 @@ public class SearchController {
             second = booksList.subList(booksList.size()/2+1, booksList.size());
         }
 
-        System.out.println(booksList);
 
 
         model.addAttribute("bks1", first);

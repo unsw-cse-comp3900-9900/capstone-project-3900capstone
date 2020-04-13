@@ -19,12 +19,16 @@
 
 
     <select id="queryBooksById" resultType="Books">
-        select * from books where bookId = #{bookId}
+        select * from project.books where bookId = #{bookId}
     </select>
 
 
+    <select id="queryBooksByAdminId" resultType="Books">
+        select * from project.books where adminId = #{adminId}
+    </select>
+
     <select id="queryBooksByBookname" resultType="Books">
-        select * from books where bookName = #{bookName}
+        select * from project.books where bookName = #{bookName}
     </select>
 
 
@@ -43,6 +47,44 @@
         delete from books where bookId = #{bookId}
     </select>
 
+    <select id="cartItems" resultType="Books">
+        select * from books join user_books on (books.bookId = user_books.bookId) and user_books.userId = #{userId}
+    </select>
+
+    <select id="oneBook" resultType="Books">
+        select * from books join user_books on (books.bookId = user_books.bookId) and user_books.userId = #{userId} and user_books.bookId = #{bookId}
+    </select>
+
+    <select id="addToCart" parameterType="Books">
+        insert into project.user_books (userId, bookId, numbers)
+        values (#{userId}, #{bookId}, 1)
+    </select>
+
+    <select id="updateCart" parameterType="Books">
+        update project.user_books set numbers = #{numbers} where userId = #{userId} and bookId = #{bookId}
+    </select>
+
+    <select id="removeItem" parameterType="Books">
+        delete from project.user_books where userId = #{userId} and bookId = #{bookId}
+    </select>
+
+<!--    for allBook table   -->
+
+    <select id="addAllBook" parameterType="Books">
+        insert into project.allBooks (bookName, price, bookCounts, detail, publisher, author, photoAddress, clickTime, classId, adminId)
+        values (#{bookName}, #{price}, #{bookCounts}, #{detail}, #{publisher}, #{author}, #{photoAddress}, #{clickTime}, #{classId}, #{adminId})
+    </select>
+
+    <select id="updateAllBook" parameterType="Books">
+        update project.allBooks set bookName = #{bookName}, price = #{price}, detail = #{detail}, publisher = #{publisher}, author = #{author},
+        photoAddress = #{photoAddress}, clickTime = #{clickTime}, classId = #{classId}, adminId = #{adminId}
+        where bookId = #{bookId}
+    </select>
+
+    <select id="deleteAllBook" parameterType="Books">
+        delete from project.allBooks where bookId = #{bookId}
+    </select>
+
     <select id="queryCartByUserId" resultType="java.util.HashMap">
         select u.ubId, b.bookName, b.price, b.author from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId}
     </select>
@@ -50,5 +92,6 @@
     <select id="deleteCartById">
         delete from user_books where ubId = #{ubId}
     </select>
+
 
 </mapper>

@@ -50,6 +50,52 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
+    public List<Books> cartItems(int userId) {
+        return bookMapper.cartItems(userId);
+    }
+
+    @Override
+    public Books oneBook(int userId, int bookId) {
+        return bookMapper.oneBook(userId, bookId);
+    }
+
+    @Override
+    public Integer addToCart(int userId, int bookId) {
+        return bookMapper.addToCart(userId, bookId);
+    }
+
+    @Override
+    public Integer updateCart(int userId, int bookId, int numbers) {
+        return bookMapper.updateCart(userId, bookId, numbers);
+    }
+
+    @Override
+    public List<Books> queryBooksByAdminId(int adminId) {
+        return bookMapper.queryBooksByAdminId(adminId);
+    }
+
+    @Override
+    public Integer removeItem(int userId, int bookId) {
+        return bookMapper.removeItem(userId, bookId);
+    }
+
+    @Override
+    public Integer addAllBook(Books book) {
+        return bookMapper.addAllBook(book);
+    }
+
+    @Override
+    public Integer updateAllBook(Books book) {
+        return bookMapper.updateAllBook(book);
+    }
+
+    @Override
+    public Integer deleteAllBook(int id) {
+        return bookMapper.deleteAllBook(id);
+    }
+
+
+    @Override
     public List<HashMap> queryCartByUserId(int id) {
         return bookMapper.queryCartByUserId(id);
     }
