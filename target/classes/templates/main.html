@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 
 <head>
     <meta charset="utf-8">
@@ -55,17 +56,21 @@
                                                 <ul class="submenu">
 
                                                     <li><a th:href="@{/elements.html}">elements</a></li>
-                                                    <li><a th:href="@{/singleListing.html}">Single listing</a></li>
+                                                    <li><a th:href="@{/singleListing}">Single listing</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a th:href="@{/unauth}">about</a></li>
-                                            <li><a th:href="@{#}">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a th:href="@{/blog.html}">blog</a></li>
-                                                    <li><a th:href="@{/singleBlog.html}">single-blog</a></li>
-                                                </ul>
-                                            </li>
+
+                                            <li><a th:href="@{/contact.html}">Contact</a></li>
                                             <li><a th:href="@{/cart}">My Cart</a></li>
+
+                                            <li shiro:hasPermission="user:admin">
+                                                <a href="" >manage book <i class="ti-angle-down"></i></a >
+                                                <ul class="submenu">
+
+                                                    <li><a th:href="@{/add.html}">add book</a ></li>
+                                                    <li><a th:href="@{/updateBookPage}">update book</a ></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>

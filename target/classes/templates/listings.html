@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+    xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 
 <head>
     <meta charset="utf-8">
@@ -9,25 +10,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" th:href="@{ite.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" th:href="@{img/favicon.png}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.png}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
-    <link rel="stylesheet" th:href="@{css/magnific-popup.css}">
-    <link rel="stylesheet" th:href="@{css/font-awesome.min.css}">
-    <link rel="stylesheet" th:href="@{css/themify-icons.css}">
-    <link rel="stylesheet" th:href="@{css/nice-select.css}">
-    <link rel="stylesheet" th:href="@{css/flaticon.css}">
-    <link rel="stylesheet" th:href="@{css/jquery-ui.css}">
-    <link rel="stylesheet" th:href="@{css/gijgo.css}">
-    <link rel="stylesheet" th:href="@{css/animate.css}">
-    <link rel="stylesheet" th:href="@{css/slick.css}">
-    <link rel="stylesheet" th:href="@{css/slicknav.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+    <link rel="stylesheet" th:href="@{/css/gijgo.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/slick.css}">
+    <link rel="stylesheet" th:href="@{/css/slicknav.css}">
     <link rel="stylesheet" th:href="@{https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css}">
 
-    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <!-- <link rel="stylesheet" th:href="@{ss/responsive.css}"> -->
 </head>
 
@@ -51,28 +52,23 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a th:href="@{/main.html}">Home</a></li>
-                                        <li><a th:href="@{/listings.html}">Listings</a></li>
+                                        <li><a th:href="@{/listings}">Listings</a></li>
                                         <li><a th:href="@{#}">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
 
                                                 <li><a th:href="@{/elements.html}">elements</a></li>
-                                                <li><a th:href="@{/singleListing.html}">Single listing</a></li>
+                                                <li><a th:href="@{/singleListing}">Single listing</a></li>
                                             </ul>
                                         </li>
-                                        <li><a th:href="@{/unauth}">about</a></li>
-                                        <li><a th:href="@{#}">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a th:href="@{/blog.html}">blog</a></li>
-                                                <li><a th:href="@{/singleBlog.html}">single-blog</a></li>
-                                            </ul>
-                                        </li>
+
                                         <li><a th:href="@{/contact.html}">Contact</a></li>
+                                        <li><a th:href="@{/cart}">My Cart</a></li>
 
-                                        <li><a href=" ">manage book <i class="ti-angle-down"></i></a >
+                                        <li>
+                                            <a href="" >manage book <i class="ti-angle-down"></i></a >
                                             <ul class="submenu">
-
-                                                <li><a th:href="@{/addBook.html}">add book</a ></li>
-                                                <li><a th:href="@{/removeBook.html}">remove book</a ></li>
+                                                <li><a th:href="@{/add.html}">add book</a ></li>
+                                                <li><a th:href="@{/updateBookPage}">update book</a ></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -195,7 +191,7 @@
             <div class="col-xl-4 col-lg-4" >
                 <h3 class="exp_title">12 Book listings are available</h3>
                 <div class="col-xl-12 col-lg-12" style="color: red; text-align: left" th:text="${noBook}" th:if="${not #strings.isEmpty(noBook)}"></div>
-                <div class="row" th:each="bk,bkStat:${bks1}" >
+                <div class="row" th:each="bk:${bks1}" >
                     <div class="col-xl-12 col-lg-12" >
                         <div class="single_explorer">
                             <div class="thumb">
@@ -206,7 +202,7 @@
                                     <i class="flaticon-beach"></i>
                                 </div>
                                 <div class="explorer_info">
-                                    <h3><a th:href="@{/singleListing.html}"> [[${bk.getBookName()}]] </a></h3>
+                                    <h3><a th:href="@{/singleListing(id=${bk.getBookId()})}"  th:text="${bk.getBookName()}" > </a></h3>
                                     <p th:text="${bk.getAuthor()}"></p>
                                 </div>
                             </div>
@@ -220,7 +216,7 @@
 
             <div class="col-xl-4 col-lg-4" >
                 <h3 class="exp_title"> &nbsp;</h3>
-                <div class="row" th:each="bk,bkStat:${bks2}" >
+                <div class="row" th:each="bk:${bks2}" >
                     <div class="col-xl-12 col-lg-12" >
                         <div class="single_explorer">
                             <div class="thumb">
@@ -231,7 +227,7 @@
                                     <i class="flaticon-beach"></i>
                                 </div>
                                 <div class="explorer_info">
-                                    <h3><a th:href="@{/singleListing.html}"> [[${bk.getBookName()}]] </a></h3>
+                                    <h3><a th:href="@{/singleListing(id=${bk.getBookId()})}"  th:text="${bk.getBookName()}" > </a></h3>
                                     <p th:text="${bk.getAuthor()}"></p>
                                 </div>
                             </div>
@@ -275,26 +271,36 @@
 
 
 <!-- link that opens popup -->
-<script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
-<!-- JS here -->
-<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="js/vendor/jquery-1.12.4.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/ajax-form.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/scrollIt.js"></script>
-<script src="js/jquery.scrollUp.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/nice-select.min.js"></script>
-<script src="js/jquery.slicknav.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/plugins.js"></script>
+    <script type="text/javascript" th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/owl.carousel.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/isotope.pkgd.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/ajax-form.js}"></script>
+    <script type="text/javascript" th:src="@{/js/waypoints.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.counterup.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/imagesloaded.pkgd.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/scrollIt.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.scrollUp.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/wow.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/nice-select.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.slicknav.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/plugins.js}"></script>
+    <!-- <script src="js/gijgo.min.js"></scri/pt> -->
+    <script type="text/javascript" th:src="@{/js/slick.min.js}"></script>
+
+
+
+    <!--contact js-->
+    <script type="text/javascript" th:src="@{/js/contact.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.form.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.validate.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/mail-script.js}"></script>
+
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
 
 
 

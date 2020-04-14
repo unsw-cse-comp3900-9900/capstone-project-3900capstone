@@ -36,19 +36,15 @@
         <div class="login100-more" style="background-image: url('signup/images/bg-01.jpg');"></div>
 
         <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-            <form class="login100-form validate-form" th:action="@{/signup}" method="post">
+            <form class="login100-form validate-form" th:action="@{/addBook}" method="post">
                     <span class="login100-form-title p-b-59">
                         Add book
                     </span>
 
-                <p class="container-login100-form-btn p-b-20" style="color: red; text-align: center" th:text="${msg}"
-                   th:if="${not #strings.isEmpty(msg)}"></p>
+<!--                <p class="container-login100-form-btn p-b-20" style="color: green; text-align: center" th:text="${msg}"-->
+<!--                   th:if="${not #strings.isEmpty(msg)}"></p>-->
 
-                <div class="wrap-input100 validate-input" data-validate="bookID is required">
-                    <span class="label-input100">bookID</span>
-                    <input class="input100" type="text" name="bookID" placeholder="BookID...">
-                    <span class="focus-input100"></span>
-                </div>
+
 
                 <div class="wrap-input100 validate-input" data-validate="bookName is required: ">
                     <span class="label-input100">bookName</span>
@@ -62,45 +58,41 @@
                     <span class="focus-input100"></span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="bookCounts is required">
-                    <span class="label-input100">bookCounts</span>
-                    <input class="input100" type="text" name="bookCounts" placeholder="123">
-                    <span class="focus-input100"></span>
-                </div>
+<!--                <div class="wrap-input100 validate-input" data-validate="bookCounts is required">-->
+<!--                    <span class="label-input100">bookCounts</span>-->
+<!--                    <input class="input100" type="text" name="bookCounts" placeholder="123">-->
+<!--                    <span class="focus-input100"></span>-->
+<!--                </div>-->
 
                 <div class="wrap-input100 validate-input" data-validate="detail is required">
                     <span class="label-input100">detail</span>
-                    <input class="input100" type="text" name="detail" placeholder="this is computer book">
+                    <input class="input100" type="text" name="detail" placeholder="Detail">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="publisher is required">
                     <span class="label-input100">publisher</span>
-                    <input class="input100" type="text" name="publisher" placeholder="Scholastic">
+                    <input class="input100" type="text" name="publisher" placeholder="Publisher">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="author is required">
                     <span class="label-input100">author</span>
-                    <input class="input100" type="text" name="author" placeholder="Agatha Christie">
+                    <input class="input100" type="text" name="author" placeholder="Author">
                     <span class="focus-input100"></span>
                 </div>
 
 
-                <div class="wrap-input100 validate-input" data-validate="photoAddress is required">
-                    <span class="label-input100">photoAddress</span>
-                    <input class="input100" type="text" name="photoAddress" placeholder="this is computer book">
-                    <span class="focus-input100"></span>
-                </div>
+<!--                <div class="wrap-input100 validate-input" data-validate="photoAddress is required">-->
+<!--                    <span class="label-input100">photoAddress</span>-->
+<!--                    <input class="input100" type="text" name="photoAddress" placeholder="this is computer book">-->
+<!--                    <span class="focus-input100"></span>-->
+<!--                </div>-->
 
-                <div class="wrap-input100 validate-input" data-validate="ClickTime is required">
-                    <span class="label-input100">ClickTime</span>
-                    <input class="input100" type="text" name="ClickTime" placeholder="this is time is ">
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input" data-validate="classID is required">
-                    <span class="label-input100">classID</span>
-                    <input class="input100" type="text" name="detail" placeholder="the class id is ">
+
+                <div class="wrap-input100 validate-input" data-validate="department is required">
+                    <span class="label-input100">Department</span>
+                    <input class="input100" type="text" name="department" placeholder="Department ">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="flex-m w-full p-b-33">

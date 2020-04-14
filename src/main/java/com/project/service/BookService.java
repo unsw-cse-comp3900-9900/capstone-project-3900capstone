@@ -13,6 +13,8 @@ public interface BookService {
 
     Books queryBooksById(int id);
 
+    List<Books> queryBooksByAdminId(int adminId);
+
     Books queryBooksByBookName(String bookName);
 
     Integer addBook(Books book);
@@ -21,8 +23,25 @@ public interface BookService {
 
     Integer deleteBook(int id);
 
+    List<Books> cartItems(int userId);
+
+    Books oneBook(int bookId, int userId);
+
+    Integer addToCart(int userId, int bookId);
+
+    Integer updateCart(int userId, int bookId, int numbers);
+
+    Integer removeItem(int userId, int bookId);
+
+    Integer addAllBook(Books book);
+
+    Integer updateAllBook(Books book);
+
+    Integer deleteAllBook(int id);
+
     List<HashMap> queryCartByUserId(int id);
 
     Integer deleteCartById(int id);
+
 
 }
