@@ -1,5 +1,6 @@
 package com.project.controller;
 
+import com.project.pojo.Books;
 import com.project.pojo.Users;
 import com.project.service.BookServiceImpl;
 import org.apache.shiro.SecurityUtils;
@@ -18,6 +19,32 @@ public class CartController {
 
     @Autowired
     BookServiceImpl bookService;
+
+    @RequestMapping("/addCart")
+    public String singleListing(Integer id ,Model model)
+    {
+        Users user = (Users) SecurityUtils.getSubject().getPrincipal();
+
+        Books book = bookService.oneBook(user.getUserId(), id);
+
+        Books nowBook = bookService.queryBooksById(id);
+
+        if (book == null)
+        {
+            Integer i = bookService.addToCart(user.getUserId(), id);
+        }
+        else {
+            Integer i = bookService.updateCart(user.getUserId(), id, 2);
+        }
+
+        model.addAttribute("msg", "Success!");
+
+        model.addAttribute("book", nowBook);
+
+
+
+        return "singleListing";
+    }
 
     @RequestMapping("/cart")
     public String queryCartByUserId(Model model) {
