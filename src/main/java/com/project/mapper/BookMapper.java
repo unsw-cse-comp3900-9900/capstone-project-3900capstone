@@ -49,5 +49,7 @@ public interface BookMapper {
 
     Integer deleteCartById(int id);
 
+    Integer updateCartStatus(int userId, int bookId);
 
+    Integer updateStock(int bookCounts, int bookId);
 }

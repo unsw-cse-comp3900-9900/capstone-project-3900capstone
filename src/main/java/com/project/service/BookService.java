@@ -43,5 +43,7 @@ public interface BookService {
 
     Integer deleteCartById(int id);
 
+    Integer updateCartStatus(int userId, int bookId);
 
+    Integer updateStock(int bookCount, int bookId);
 }

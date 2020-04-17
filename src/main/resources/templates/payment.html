@@ -114,57 +114,136 @@
                             <div class="col-75">
                                 <div class="container">
                                     <form action="/action_page.php">
-
+                                        <div th:if="${message}" style="background-color: #e1f7e7; padding: 10px; border-right: 3px;">
+                                            <table style="width: 1100px">
+                                                <tr th:if="${message == 'some'}">
+                                                    <td>
+                                                        Some books are currently unavailable, would you like to proceed with the rest?
+                                                    </td>
+                                                    <td style="text-align: right">
+                                                        <a th:href="@{/onlyAvailable}" class="genric-btn info radius">Yes</a>
+                                                    </td>
+                                                    <td>
+                                                        <a th:href="@{/main.html}" class="genric-btn danger radius">No</a>
+                                                    </td>
+                                                </tr>
+                                                <tr th:if="${message == 'all'}">
+                                                    <td>
+                                                        Books in your order are currently out of stock, we are sorry for the inconvenience!
+                                                    </td>
+                                                    <td style="text-align: center">
+                                                        <a th:href="@{/main.html}" class="genric-btn info radius">Ok</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                         <div class="row">
                                             <div class="col-50">
                                                 <h3>Billing Address</h3>
-                                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-                                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                                <input type="text" id="email" name="email" placeholder="john@example.com">
-                                                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-                                                <label for="city"><i class="fa fa-institution"></i> City</label>
-                                                <input type="text" id="city" name="city" placeholder="New York">
-
-                                                <div class="row">
-                                                    <div class="col-50">
-                                                        <label for="state">State</label>
-                                                        <input type="text" id="state" name="state" placeholder="NY">
-                                                    </div>
-                                                    <div class="col-50">
-                                                        <label for="zip">Zip</label>
-                                                        <input type="text" id="zip" name="zip" placeholder="10001">
-                                                    </div>
-                                                </div>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                                        </td>
+                                                        <td>
+                                                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="email" name="email" placeholder="john@example.com">
+                                                        </td>
+                                                        <td>
+                                                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="city" name="city" placeholder="New York">
+                                                        </td>
+                                                        <td>
+                                                            <label for="state">State</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="state" name="state" placeholder="NY">
+                                                        </td>
+                                                        <td>
+                                                            <label for="zip">Zip</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="zip" name="zip" placeholder="10001">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+<!--                                                <div class="row">-->
+<!--                                                    <div class="col-50">-->
+<!--                                                        -->
+<!--                                                    </div>-->
+<!--                                                    <div class="col-50">-->
+<!--                                                        -->
+<!--                                                    </div>-->
+<!--                                                </div>-->
                                             </div>
 
                                             <div class="col-50">
                                                 <h3>Payment</h3>
-                                                <label for="fname">Accepted Cards</label>
+                                                <label>Accepted Cards</label>
                                                 <div class="icon-container">
                                                     <i class="fa fa-cc-visa" style="color:navy;"></i>
                                                     <i class="fa fa-cc-amex" style="color:blue;"></i>
                                                     <i class="fa fa-cc-mastercard" style="color:red;"></i>
                                                     <i class="fa fa-cc-discover" style="color:orange;"></i>
                                                 </div>
-                                                <label for="cname">Name on Card</label>
-                                                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-                                                <label for="ccnum">Credit card number</label>
-                                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                                                <label for="expmonth">Exp Month</label>
-                                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <label for="cname">Name on Card</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                                        </td>
+                                                        <td>
+                                                            <label for="ccnum">Credit card number</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                                        </td>
+                                                        <td>
+                                                            <label for="expmonth">Exp Month</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label for="expyear">Exp Year</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                                        </td>
+                                                        <td>
+                                                            <label for="cvv">CVV</label>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" id="cvv" name="cvv" placeholder="352">
+                                                        </td>
+                                                    </tr>
+                                                </table>
 
-                                                <div class="row">
-                                                    <div class="col-50">
-                                                        <label for="expyear">Exp Year</label>
-                                                        <input type="text" id="expyear" name="expyear" placeholder="2018">
-                                                    </div>
-                                                    <div class="col-50">
-                                                        <label for="cvv">CVV</label>
-                                                        <input type="text" id="cvv" name="cvv" placeholder="352">
-                                                    </div>
-                                                </div>
+<!--                                                <div class="row">-->
+<!--                                                    <div class="col-50">-->
+<!--                                                    </div>-->
+<!--                                                    <div class="col-50">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
                                             </div>
 
                                         </div>
@@ -172,8 +251,9 @@
                                             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                                         </label>
                                         <!-- checkout button -->
+
                                         <input type="submit" value="Continue to checkout" class="btn">
-                                        <a th:href="@{/payment.html}" class="genric-btn info radius" style="width:111.25px; float:right">Checkout</a>
+                                        <a th:href="@{/payment}" class="genric-btn info radius" style="width:111.25px; float:right">Checkout</a>
                                     </form>
                                 </div>
                             </div>

@@ -86,12 +86,20 @@
     </select>
 
     <select id="queryCartByUserId" resultType="java.util.HashMap">
-        select u.ubId, b.bookName, b.price, b.author from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId}
+        select u.ubId, u.numbers, u.bookId, b.bookName, b.price, b.author from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId} and
+        u.status = "ordered"
     </select>
 
     <select id="deleteCartById">
         delete from user_books where ubId = #{ubId}
     </select>
 
+    <select id="updateCartStatus">
+        update project.user_books set status = "purchased" where userId = #{userId} and bookId = #{bookId}
+    </select>
+
+    <select id="updateStock">
+        update project.books set bookCounts = bookCounts - #{bookCounts} where bookId = #{bookId}
+    </select>
 
 </mapper>

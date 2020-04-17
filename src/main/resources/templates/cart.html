@@ -126,7 +126,7 @@
                                 <!--/*@thymesVar id="bookName" type="String"*/-->
                                 <td th:text="${item.bookName}"></td>
                                 <td th:text="${item.author}"></td>
-                                <td>1</td>
+                                <td th:text="${item.numbers}"></td>
                                 <td th:text="${item.price}"></td>
                                 <td width="174px">
                                     <a th:href="@{/delete/{ubId}(ubId=${item.ubId})}"
