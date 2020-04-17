@@ -52,12 +52,12 @@
     </select>
 
     <select id="oneBook" resultType="Books">
-        select * from books join user_books on (books.bookId = user_books.bookId) and user_books.userId = #{userId} and user_books.bookId = #{bookId}
+        select * from books join user_books on (books.bookId = user_books.bookId) and user_books.userId = #{userId} and user_books.bookId = #{bookId} and user_books.status = "ordered"
     </select>
 
     <select id="addToCart" parameterType="Books">
-        insert into project.user_books (userId, bookId, numbers)
-        values (#{userId}, #{bookId}, 1)
+        insert into project.user_books (userId, bookId, numbers, status)
+        values (#{userId}, #{bookId}, 1, "ordered")
     </select>
 
     <select id="updateCart" parameterType="Books">
