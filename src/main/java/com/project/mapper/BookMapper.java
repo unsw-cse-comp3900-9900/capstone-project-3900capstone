@@ -52,4 +52,8 @@ public interface BookMapper {
     Integer updateCartStatus(int userId, int bookId);
 
     Integer updateStock(int bookCounts, int bookId);
+
+    List<HashMap> queryBookViewTime();
+
+    List<HashMap> queryBookSold();
 }

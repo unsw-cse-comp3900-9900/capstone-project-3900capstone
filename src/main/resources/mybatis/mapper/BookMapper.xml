@@ -102,4 +102,11 @@
         update project.books set bookCounts = bookCounts - #{bookCounts} where bookId = #{bookId}
     </select>
 
+    <select id="queryBookViewTime" resultType="java.util.HashMap">
+        select bookName, clickTime from books order by clickTime DESC LIMIT 5
+    </select>
+
+    <select id="queryBookSold" resultType="java.util.HashMap">
+        select b.bookName, t.total from books b join (select bookId, SUM(numbers) as total from user_books where status = "purchased" group by bookId) t on b.bookId = t.bookId order by total DESC LIMIT 5
+    </select>
 </mapper>

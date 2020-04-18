@@ -114,4 +114,14 @@ public class BookServiceImpl implements BookService{
     public Integer updateCartStatus(int userId, int bookId) {
         return bookMapper.updateCartStatus(userId, bookId);
     }
+
+    @Override
+    public List<HashMap> queryBookViewTime() {
+        return bookMapper.queryBookViewTime();
+    }
+
+    @Override
+    public List<HashMap> queryBookSold() {
+        return bookMapper.queryBookSold();
+    }
 }

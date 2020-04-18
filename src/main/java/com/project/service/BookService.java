@@ -46,4 +46,8 @@ public interface BookService {
     Integer updateCartStatus(int userId, int bookId);
 
     Integer updateStock(int bookCount, int bookId);
+
+    List<HashMap> queryBookViewTime();
+
+    List<HashMap> queryBookSold();
 }
