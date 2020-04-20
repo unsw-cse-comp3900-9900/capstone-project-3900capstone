@@ -54,4 +54,6 @@ public interface BookService {
     Integer updateClickTime(Integer bookId);
 
     Books recommendation(String department, int first, int second);
+
+    Integer queryCartItem(int userId, int bookId);
 }
