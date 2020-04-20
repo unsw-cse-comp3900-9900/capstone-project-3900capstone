@@ -51,6 +51,7 @@
                                         <li><a th:href="@{/analytics}">Analytics</a></li>
 
                                         <li><a th:href="@{/cart}">My Cart</a></li>
+                                        <li><a th:href="@{/feedback}">Feedback</a></li>
 
                                         <li><a href="" >profile <i class="ti-angle-down"></i></a >
                                             <ul class="submenu">
@@ -60,7 +61,7 @@
                                             </ul>
                                         </li>
 
-                                        <li >
+                                        <li shiro:hasPermission="user:admin">
                                             <a href="" >manage book <i class="ti-angle-down"></i></a >
                                             <ul class="submenu">
 
