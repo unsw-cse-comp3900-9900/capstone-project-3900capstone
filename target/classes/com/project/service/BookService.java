@@ -43,5 +43,15 @@ public interface BookService {
 
     Integer deleteCartById(int id);
 
+    Integer updateCartStatus(int userId, int bookId);
 
+    Integer updateStock(int bookCount, int bookId);
+
+    List<HashMap> queryBookViewTime();
+
+    List<HashMap> queryBookSold();
+
+    Integer updateClickTime(Integer bookId);
+
+    Books recommendation(String department, int first, int second);
 }

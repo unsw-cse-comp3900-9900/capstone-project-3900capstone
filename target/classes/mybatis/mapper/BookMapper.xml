@@ -52,12 +52,12 @@
     </select>
 
     <select id="oneBook" resultType="Books">
-        select * from books join user_books on (books.bookId = user_books.bookId) and user_books.userId = #{userId} and user_books.bookId = #{bookId}
+        select * from books join user_books on (books.bookId = user_books.bookId) and user_books.userId = #{userId} and user_books.bookId = #{bookId} and user_books.status = "ordered"
     </select>
 
     <select id="addToCart" parameterType="Books">
-        insert into project.user_books (userId, bookId, numbers)
-        values (#{userId}, #{bookId}, 1)
+        insert into project.user_books (userId, bookId, numbers, status)
+        values (#{userId}, #{bookId}, 1, "ordered")
     </select>
 
     <select id="updateCart" parameterType="Books">
@@ -86,12 +86,35 @@
     </select>
 
     <select id="queryCartByUserId" resultType="java.util.HashMap">
-        select u.ubId, b.bookName, b.price, b.author from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId}
+        select u.ubId, u.numbers, u.bookId, b.bookName, b.price, b.author from books b join user_books u on b.bookId = u.bookId where u.userId = #{userId} and
+        u.status = "ordered"
     </select>
 
     <select id="deleteCartById">
         delete from user_books where ubId = #{ubId}
     </select>
 
+    <select id="updateCartStatus">
+        update project.user_books set status = "purchased" where userId = #{userId} and bookId = #{bookId}
+    </select>
 
+    <select id="updateStock">
+        update project.books set bookCounts = bookCounts - #{bookCounts} where bookId = #{bookId}
+    </select>
+
+    <select id="queryBookViewTime" resultType="java.util.HashMap">
+        select bookName, clickTime from books order by clickTime DESC LIMIT 5
+    </select>
+
+    <select id="queryBookSold" resultType="java.util.HashMap">
+        select b.bookName, t.total from books b join (select bookId, SUM(numbers) as total from user_books where status = "purchased" group by bookId) t on b.bookId = t.bookId order by total DESC LIMIT 5
+    </select>
+
+    <select id="updateClickTime" parameterType="Books">
+        update project.books set clickTime = clickTime+1 where bookId = #{bookId}
+    </select>
+
+    <select id="recommendation" resultType="Books">
+        select * from project.books where department = #{department}  LIMIT #{first},#{second}
+    </select>
 </mapper>

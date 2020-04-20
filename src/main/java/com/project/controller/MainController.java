@@ -1,0 +1,57 @@
+package com.project.controller;
+
+import com.project.pojo.Books;
+import com.project.pojo.Users;
+import com.project.service.BookServiceImpl;
+import com.project.service.UserServiceImpl;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+
+@Controller
+public class MainController {
+    @Autowired
+    UserServiceImpl userService;
+
+    @Autowired
+    BookServiceImpl bookService;
+
+
+    @RequestMapping("/main")
+
+    public String login(Model model)
+    {
+
+        Subject subject = SecurityUtils.getSubject();
+        Users user = (Users) SecurityUtils.getSubject().getPrincipal();
+
+        String department = user.getDepartment();
+
+        Books rec1 = bookService.recommendation(department, 0, 1);
+        Books rec2 = bookService.recommendation(department, 1, 1);
+        Books rec3 = bookService.recommendation(department, 2, 1);
+        Books rec4 = bookService.recommendation(department, 3, 1);
+
+        model.addAttribute("bk1",rec1);
+
+        model.addAttribute("bk2",rec2);
+
+        model.addAttribute("bk3",rec3);
+
+        model.addAttribute("bk4",rec4);
+
+
+        return  "main";
+
+    }
+
+}

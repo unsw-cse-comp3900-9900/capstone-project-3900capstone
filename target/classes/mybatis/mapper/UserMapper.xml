@@ -26,12 +26,12 @@
     </select>
 
     <select id="addUser" parameterType="Users">
-        insert into user (zId, userName, userPwd, phone, email, major, address)
-        values (#{zId}, #{userName}, #{userPwd}, #{phone}, #{email}, #{major}, #{address})
+        insert into user (zId, userName, userPwd, phone, email, department, address)
+        values (#{zId}, #{userName}, #{userPwd}, #{phone}, #{email}, #{department}, #{address})
     </select>
 
     <select id="updateUser" parameterType="Users">
-        update user set zId = #{zId}, userName = #{userName}, userPwd = #{userPwd}, phone = #{phone}, email = #{email}, major = #{major}, address = #{address}
+        update user set zId = #{zId}, userName = #{userName}, userPwd = #{userPwd}, phone = #{phone}, email = #{email}, department = #{department}, address = #{address}
         where userId = #{userId}
     </select>
 

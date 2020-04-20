@@ -104,4 +104,34 @@ public class BookServiceImpl implements BookService{
     public Integer deleteCartById(int id) {
         return bookMapper.deleteCartById(id);
     }
+
+    @Override
+    public Integer updateStock(int bookCount, int bookId) {
+        return bookMapper.updateStock(bookCount, bookId);
+    }
+
+    @Override
+    public Integer updateCartStatus(int userId, int bookId) {
+        return bookMapper.updateCartStatus(userId, bookId);
+    }
+
+    @Override
+    public List<HashMap> queryBookViewTime() {
+        return bookMapper.queryBookViewTime();
+    }
+
+    @Override
+    public List<HashMap> queryBookSold() {
+        return bookMapper.queryBookSold();
+    }
+
+    @Override
+    public Integer updateClickTime(Integer bookId) {
+        return bookMapper.updateClickTime(bookId);
+    }
+
+    @Override
+    public Books recommendation(String department , int first, int second) {
+        return bookMapper.recommendation(department, first, second);
+    }
 }

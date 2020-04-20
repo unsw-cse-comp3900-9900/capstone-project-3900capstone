@@ -14,7 +14,7 @@ public class Users {
     private String userPwd;
     private Integer phone;
     private String email;
-    private String major;
+    private String department;
     private String address;
     private String auth;
 

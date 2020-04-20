@@ -152,7 +152,7 @@ public class AdminController {
 
 
         Integer integer = bookService.updateBook(new Books(id, book.getBookName(), price, book.getBookCounts(), detail,
-                publisher, author, null, book.getClickTime(), book.getClassId(), user.getUserId()));
+                publisher, author, null, book.getClickTime(), book.getDepartment(), user.getUserId()));
 
 
         List<Books> booksList = bookService.queryBooksByAdminId(user.getUserId());

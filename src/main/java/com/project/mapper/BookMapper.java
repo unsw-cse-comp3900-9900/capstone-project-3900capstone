@@ -56,4 +56,8 @@ public interface BookMapper {
     List<HashMap> queryBookViewTime();
 
     List<HashMap> queryBookSold();
+
+    Integer updateClickTime(Integer bookId);
+
+    Books recommendation(String department, int first, int second);
 }

@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Change Profile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/gijgo.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" th:href="@{/css/slick.css}">
+    <link rel="stylesheet" th:href="@{/css/slicknav.css}">
+    <link rel="stylesheet" th:href="@{https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css}">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- header-start -->
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid ">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <p style="color: white"> Hi, Yi!</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a th:href="@{/main}">Home</a></li>
+                                        <li><a th:href="@{/listings}">Listings</a></li>
+
+                                        <li><a th:href="@{/analytics}">Analytics</a></li>
+
+                                        <li><a th:href="@{/cart}">My Cart</a></li>
+
+                                        <li><a href="" >profile <i class="ti-angle-down"></i></a >
+                                            <ul class="submenu">
+
+                                                <li><a th:href="@{/changePwdPage}">change password</a ></li>
+                                                <li><a th:href="@{/profile}">update profile</a ></li>
+                                            </ul>
+                                        </li>
+
+                                        <li shiro:hasPermission="user:admin">
+                                            <a href="" >manage book <i class="ti-angle-down"></i></a >
+                                            <ul class="submenu">
+
+                                                <li><a th:href="@{/add.html}">add book</a ></li>
+                                                <li><a th:href="@{/updateBookPage}">update book</a ></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a th:href="@{/logout}">Sign Out</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
+<div class="bradcam_area bradcam_bg_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3 style="text-align: center">Change Profile</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+            <!--/*@thymesVar id="list" type="List<Cart>"*/-->
+
+
+            <div th:switch="${list}">
+                <div>
+<!--                    <h2 th:text="No Item Yet" th:if="${not #strings.isEmpty(books)}"></h2>-->
+                    <p class="container-login100-form-btn p-b-20" style="color: green; text-align: center" th:text="${success}" th:if="${not #strings.isEmpty(success)}"></p>
+                    <p class="container-login100-form-btn p-b-20" style="color: red; text-align: center" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+
+
+                    <form th:action="@{/changeProfile}">
+                        <div class="form-group row">
+                            <label for="staticUserName" class="col-sm-3 col-form-label">User Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" readonly class="form-control-plaintext" id="staticUserName" th:value="${user.getUserName()}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-3 col-form-label">Change Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="inputEmail" name="email" th:placeholder="${user.getEmail()}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPhone" class="col-sm-3 col-form-label">Change Phone Number</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputPhone" name="phone" th:placeholder="${user.getPhone()}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputAddress" class="col-sm-3 col-form-label">Change Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputAddress" name="address" th:placeholder="${user.getAddress()}">
+                            </div>
+                        </div>
+
+
+
+                        <div class="container-login100-form-btn p-t-25" >
+                            <button type="submit" class="btn btn-primary mb-2">Confirm </button>
+                        </div>
+
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- link that opens popup -->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>-->
+<!-- JS here -->
+<script type="text/javascript" th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/owl.carousel.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/ajax-form.js}"></script>
+<script type="text/javascript" th:src="@{/js/waypoints.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.counterup.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/imagesloaded.pkgd.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/scrollIt.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.scrollUp.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/wow.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/nice-select.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.slicknav.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/plugins.js}"></script>
+<!-- <script src="js/gijgo.min.js"></script> -->
+<script type="text/javascript" th:src="@{/js/slick.min.js}"></script>
+
+
+
+<!--contact js-->
+<script type="text/javascript" th:src="@{/js/contact.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.form.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.validate.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/mail-script.js}"></script>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+
+<!--    <script>-->
+<!--        $( function() {-->
+<!--            $( "#slider-range" ).slider({-->
+<!--                range: true,-->
+<!--                min: 0,-->
+<!--                max: 500,-->
+<!--                values: [ 75, 300 ],-->
+<!--                slide: function( event, ui ) {-->
+<!--                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );-->
+<!--                }-->
+<!--            });-->
+<!--            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +-->
+<!--                " - $" + $( "#slider-range" ).slider( "values", 1 ) );-->
+<!--        } );-->
+<!--    </script>-->
+</body>
+
+</html>

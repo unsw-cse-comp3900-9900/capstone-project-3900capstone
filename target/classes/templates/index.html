@@ -71,7 +71,7 @@
                             <p>Find Second-handed textbooks</p>
                             <h3>Find Second-handed textbooks</h3>
                             <div class="search_form">
-                                <form action="#">
+                                <form th:action="@{/loginPage}">
                                     <div class="row align-items-center">
                                         <div class="col-xl-5 col-md-4">
                                             <div class="input_field">
@@ -88,28 +88,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="quality">
-                                <ul>
-                                    <li>
-                                        <button>COMP3331</button>
-                                    </li>
-                                    <li>
-                                        <button>Business School</button>
-                                    </li>
-                                    <li>
-                                        <button>Data Structures and Algorithms</button>
-                                    </li>
-                                    <li>
-                                        <button>Law</button>
-                                    </li>
-                                    <li>
-                                        <button>COMM3654</button>
-                                    </li>
-                                    <li>
-                                        <button>COMP1511</button>
-                                    </li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -123,9 +102,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-60 text-center">
-                        <p>Discover</p>
                         <h3>
-                            Trending Books
+                            Some Books
                         </h3>
                     </div>
                 </div>
@@ -138,8 +116,8 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                <a th:href="@{/listings.html}"><h4>COMP1511</h4></a>
-                                <span>add to cart</span>
+                                <a th:href="@{/loginPage}"><h4>Book1</h4></a>
+                                <span><a th:href="@{/loginPage}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
@@ -151,8 +129,8 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                <a th:href="@{listings.html}"><h4>LAW3455</h4></a>
-                                <span>add to cart</span>
+                                <a th:href="@{/loginPage}"><h4>Book2</h4></a>
+                                <span><a th:href="@{/loginPage}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
@@ -164,8 +142,8 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                    <a th:href="@{listings.html}"><h4>FINS4343</h4></a>
-                                <span>add to cart</span>
+                                <a th:href="@{/loginPage}"><h4>Book3</h4></a>
+                                <span><a th:href="@{/loginPage}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
@@ -177,8 +155,8 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                    <a th:href="@{listings.html}"><h4>CRIM6534</h4></a>
-                                <span>05 Listings</span>
+                                <a th:href="@{/loginPage}"><h4>Book4</h4></a>
+                                <span><a th:href="@{/loginPage}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>

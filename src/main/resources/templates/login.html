@@ -35,6 +35,7 @@
 
 
 					<p class="container-login100-form-btn p-b-20" style="color: red; text-align: center" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+					<p class="container-login100-form-btn p-b-20" style="color: green; text-align: center" th:text="${changeSuccess}" th:if="${not #strings.isEmpty(changeSuccess)}"></p>
 
 
 					<div class="wrap-input100 validate-input m-b-16 p-b-10" data-validate = "Valid email is required: ex@abc.xyz">

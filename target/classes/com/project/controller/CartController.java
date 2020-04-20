@@ -58,7 +58,7 @@ public class CartController {
             model.addAttribute("list", cartList);
             Float total = 0.0F;
             for (HashMap temp : cartList) {
-                total += (Float) temp.get("price");
+                total += (Float) temp.get("price") * (Integer) temp.get("numbers");
             }
             model.addAttribute("total", total);
         }

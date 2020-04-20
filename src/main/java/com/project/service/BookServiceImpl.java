@@ -124,4 +124,14 @@ public class BookServiceImpl implements BookService{
     public List<HashMap> queryBookSold() {
         return bookMapper.queryBookSold();
     }
+
+    @Override
+    public Integer updateClickTime(Integer bookId) {
+        return bookMapper.updateClickTime(bookId);
+    }
+
+    @Override
+    public Books recommendation(String department , int first, int second) {
+        return bookMapper.recommendation(department, first, second);
+    }
 }

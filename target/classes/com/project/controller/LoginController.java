@@ -1,5 +1,7 @@
 package com.project.controller;
 
+import com.project.pojo.Books;
+import com.project.service.BookServiceImpl;
 import com.project.service.UserServiceImpl;
 import com.project.pojo.Users;
 import org.apache.shiro.SecurityUtils;
@@ -23,8 +25,8 @@ public class LoginController {
     @Autowired
     UserServiceImpl userService;
 
-
-
+    @Autowired
+    BookServiceImpl bookService;
 
 
     @RequestMapping("/login")
@@ -41,7 +43,26 @@ public class LoginController {
 
         try {
             subject.login(token);
-            return "redirect:/main.html";
+            Users user = (Users) SecurityUtils.getSubject().getPrincipal();
+
+            String department = user.getDepartment();
+
+            Books rec1 = bookService.recommendation(department, 0, 1);
+            Books rec2 = bookService.recommendation(department, 1, 1);
+            Books rec3 = bookService.recommendation(department, 2, 1);
+            Books rec4 = bookService.recommendation(department, 3, 1);
+
+            model.addAttribute("bk1",rec1);
+
+            model.addAttribute("bk2",rec2);
+
+            model.addAttribute("bk3",rec3);
+
+            model.addAttribute("bk4",rec4);
+
+
+            return  "main";
+
         }
         catch (IncorrectCredentialsException e){
             model.addAttribute("msg", "Invalid Username or Password");

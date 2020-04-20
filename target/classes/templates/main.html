@@ -50,18 +50,20 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a th:href="@{/main.html}">Home</a></li>
+                                            <li><a th:href="@{/main}">Home</a></li>
                                             <li><a th:href="@{/listings}">Listings</a></li>
-                                            <li><a th:href="@{#}">pages <i class="ti-angle-down"></i></a>
+
+                                            <li><a th:href="@{/analytics}">Analytics</a></li>
+
+                                            <li><a th:href="@{/cart}">My Cart</a></li>
+
+                                            <li><a href="" >profile <i class="ti-angle-down"></i></a >
                                                 <ul class="submenu">
 
-                                                    <li><a th:href="@{/elements.html}">elements</a></li>
-                                                    <li><a th:href="@{/singleListing}">Single listing</a></li>
+                                                    <li><a th:href="@{/changePwdPage}">change password</a ></li>
+                                                    <li><a th:href="@{/profile}">update profile</a ></li>
                                                 </ul>
                                             </li>
-
-                                            <li><a th:href="@{/contact.html}">Contact</a></li>
-                                            <li><a th:href="@{/cart}">My Cart</a></li>
 
                                             <li shiro:hasPermission="user:admin">
                                                 <a href="" >manage book <i class="ti-angle-down"></i></a >
@@ -122,28 +124,28 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="quality">
-                                <ul>
-                                    <li>
-                                        <button>COMP3331</button>
-                                    </li>
-                                    <li>
-                                        <button>Business School</button>
-                                    </li>
-                                    <li>
-                                        <button>Data Structures and Algorithms</button>
-                                    </li>
-                                    <li>
-                                        <button>Law</button>
-                                    </li>
-                                    <li>
-                                        <button>COMM3654</button>
-                                    </li>
-                                    <li>
-                                        <button>COMP1511</button>
-                                    </li>
-                                </ul>
-                            </div>
+<!--                            <div class="quality">-->
+<!--                                <ul>-->
+<!--                                    <li>-->
+<!--                                        <button>COMP3331</button>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <button>Business School</button>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <button>Data Structures and Algorithms</button>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <button>Law</button>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <button>COMM3654</button>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <button>COMP1511</button>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -153,18 +155,20 @@
     <!-- slider_area_end -->
 
     <div class="popular_catagory_area">
-        <div class="container">
+        <div class="container" >
+
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title mb-60 text-center">
-                        <p>Discover</p>
                         <h3>
-                            Trending Books
+                            Recommended Books
+
                         </h3>
                     </div>
                 </div>
             </div>
-            <div class="row">
+
+            <div class="row" >
                 <div class="col-xl-3 col-md-4 col-lg-3">
                     <div class="single_catagory">
                         <div class="thumb">
@@ -172,12 +176,13 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                <a th:href="@{/listings.html}"><h4>COMP1511</h4></a>
-                                <span>add to cart</span>
+                                <a th:href="@{/singleListing(id=${bk1.getBookId()})}" ><h4 th:text="${bk1.getBookName()}"></h4></a>
+                                <span><a th:href="@{/addCart/(id=${bk1.getBookId()})}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-3 col-md-4 col-lg-3">
                     <div class="single_catagory">
                         <div class="thumb">
@@ -185,8 +190,8 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                <a th:href="@{listings.html}"><h4>LAW3455</h4></a>
-                                <span>add to cart</span>
+                                <a th:href="@{/singleListing(id=${bk2.getBookId()})}" ><h4 th:text="${bk2.getBookName()}"></h4></a>
+                                <span><a th:href="@{/addCart/(id=${bk2.getBookId()})}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
@@ -198,8 +203,8 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                    <a th:href="@{listings.html}"><h4>FINS4343</h4></a>
-                                <span>add to cart</span>
+                                <a th:href="@{/singleListing(id=${bk3.getBookId()})}"><h4 th:text="${bk3.getBookName()}"></h4></a>
+                                <span><a th:href="@{/addCart/(id=${bk3.getBookId()})}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
@@ -211,15 +216,12 @@
                         </div>
                         <div class="hover_overlay">
                             <div class="hover_inner">
-                                    <a th:href="@{listings.html}"><h4>CRIM6534</h4></a>
-                                <span>05 Listings</span>
+                                <a th:href="@{/singleListing(id=${bk4.getBookId()})}" ><h4 th:text="${bk4.getBookName()}"></h4></a>
+                                <span><a th:href="@{/addCart/(id=${bk4.getBookId()})}" style="color: white">add to cart</a></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
-                
                
             </div>
         </div>

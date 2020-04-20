@@ -21,6 +21,7 @@ public class SingleListingController {
     {
         Books book = bookService.queryBooksById(id);
 
+        Integer i = bookService.updateClickTime(id);
 
         model.addAttribute("book", book);
 

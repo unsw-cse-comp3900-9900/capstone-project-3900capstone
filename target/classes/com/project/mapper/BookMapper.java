@@ -49,5 +49,15 @@ public interface BookMapper {
 
     Integer deleteCartById(int id);
 
+    Integer updateCartStatus(int userId, int bookId);
 
+    Integer updateStock(int bookCounts, int bookId);
+
+    List<HashMap> queryBookViewTime();
+
+    List<HashMap> queryBookSold();
+
+    Integer updateClickTime(Integer bookId);
+
+    Books recommendation(String department, int first, int second);
 }

@@ -109,4 +109,12 @@
     <select id="queryBookSold" resultType="java.util.HashMap">
         select b.bookName, t.total from books b join (select bookId, SUM(numbers) as total from user_books where status = "purchased" group by bookId) t on b.bookId = t.bookId order by total DESC LIMIT 5
     </select>
+
+    <select id="updateClickTime" parameterType="Books">
+        update project.books set clickTime = clickTime+1 where bookId = #{bookId}
+    </select>
+
+    <select id="recommendation" resultType="Books">
+        select * from project.books where department = #{department}  LIMIT #{first},#{second}
+    </select>
 </mapper>

@@ -18,7 +18,7 @@ public class Books {
     private String author;
     private String photoAddress;
     private int clickTime;
-    private String classId;
+    private String department;
     private Integer adminId;
 
 }

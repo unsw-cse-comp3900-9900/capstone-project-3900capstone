@@ -14,6 +14,7 @@ public class LogoutController {
 
     @RequestMapping("/logout")
     public String logout(HttpSession session, Model model) {
+
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         model.addAttribute("msg","Logout!");
