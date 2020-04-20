@@ -42,14 +42,14 @@
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid ">
                     <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <p style="color: white"> Hi, Yi!</p>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
+                        <div class="row align-items-center justify-content-end">
+
+                            <div class="col-xl-7 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
+
+
                                             <li><a th:href="@{/main}">Home</a></li>
                                             <li><a th:href="@{/listings}">Listings</a></li>
 
@@ -73,6 +73,7 @@
                                                     <li><a th:href="@{/updateBookPage}">update book</a ></li>
                                                 </ul>
                                             </li>
+
                                         </ul>
                                     </nav>
                                 </div>
@@ -127,26 +128,26 @@
                         <p th:text="${book.getDetail()}"></p>
                     </div>
 
-                <div class="single_details">
+                    <div class="single_details">
                         <h3>Add To Cart Now</h3>
                         <div class="col-lg-12 p-0">
-                                <form  th:action="@{/addCart/(id=${book.getBookId()})}" method="post">
-                                  <div class="row">
+                            <form  th:action="@{/addCart/(id=${book.getBookId()})}" method="post">
+                                <div class="row">
 
-                                  <div class="form-group">
+                                    <div class="form-group">
 
-                                      &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-sm btn-primary">Add to cart</button>
+                                        &nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-sm btn-primary">Add to cart</button>
 
-                                  </div>
-                                  </div>
-                                </form>
+                                    </div>
+                                </div>
+                            </form>
                             <!-- begin wwww.htmlcommentbox.com -->
                             <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
                             <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
                             <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1587373272468");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
                             <!-- end www.htmlcommentbox.com -->
                         </div>
-                </div>
+                    </div>
             </div>
         </div>
     </div>   

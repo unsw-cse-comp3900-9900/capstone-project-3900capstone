@@ -34,7 +34,8 @@ public class CartController {
             Integer i = bookService.addToCart(user.getUserId(), id);
         }
         else {
-            Integer i = bookService.updateCart(user.getUserId(), id, 2);
+            Integer quantity = bookService.queryCartItem(user.getUserId(), id);
+            Integer i = bookService.updateCart(user.getUserId(), id, quantity + 1);
         }
 
         model.addAttribute("msg", "Success!");
@@ -44,6 +45,28 @@ public class CartController {
 
 
         return "singleListing";
+    }
+
+    @RequestMapping("/addCopy")
+    public String addCopy(Integer id, Model model){
+        Users user = (Users) SecurityUtils.getSubject().getPrincipal();
+        Integer quantity = bookService.queryCartItem(user.getUserId(), id);
+        bookService.updateCart(user.getUserId(), id, quantity + 1);
+
+        return "redirect:/cart";
+    }
+
+    @RequestMapping("/deleteCopy")
+    public String deleteCopy(Integer id, Integer ubId, Model model){
+        Users user = (Users) SecurityUtils.getSubject().getPrincipal();
+        Integer quantity = bookService.queryCartItem(user.getUserId(), id);
+        if (quantity == 1) {
+            bookService.deleteCartById(ubId);
+        }
+        else {
+            bookService.updateCart(user.getUserId(), id, quantity - 1);
+        }
+        return "redirect:/cart";
     }
 
     @RequestMapping("/cart")

@@ -134,4 +134,9 @@ public class BookServiceImpl implements BookService{
     public Books recommendation(String department , int first, int second) {
         return bookMapper.recommendation(department, first, second);
     }
+
+    @Override
+    public Integer queryCartItem(int userId, int bookId) {
+        return bookMapper.queryCartItem(userId, bookId);
+    }
 }

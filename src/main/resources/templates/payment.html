@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 
 <head>
     <meta charset="utf-8">
@@ -42,14 +43,14 @@
         <div id="sticky-header" class="main-header-area">
             <div class="container-fluid ">
                 <div class="header_bottom_border">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-2">
-                            <p style="color: white"> Hi, Yi!</p>
-                        </div>
-                        <div class="col-xl-6 col-lg-7">
+                    <div class="row align-items-center justify-content-end">
+
+                        <div class="col-xl-7 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
+
+
                                         <li><a th:href="@{/main}">Home</a></li>
                                         <li><a th:href="@{/listings}">Listings</a></li>
 
@@ -65,7 +66,7 @@
                                             </ul>
                                         </li>
 
-                                        <li >
+                                        <li shiro:hasPermission="user:admin">
                                             <a href="" >manage book <i class="ti-angle-down"></i></a >
                                             <ul class="submenu">
 
@@ -73,6 +74,7 @@
                                                 <li><a th:href="@{/updateBookPage}">update book</a ></li>
                                             </ul>
                                         </li>
+
                                     </ul>
                                 </nav>
                             </div>
