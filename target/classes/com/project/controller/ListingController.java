@@ -31,6 +31,8 @@ public class ListingController {
 
         List<Books> booksList = bookService.queryBooksList(offset, limit);
 
+        List<Books> booksList1 = bookService.queryBooksList(0, 5);
+
         List<Books> first = new ArrayList<>();
         List<Books> second = new ArrayList<>();
 
@@ -55,7 +57,7 @@ public class ListingController {
         model.addAttribute("bks1", first);
         model.addAttribute("bks2", second);
 
-        model.addAttribute("bks", booksList);
+        model.addAttribute("bks", booksList1);
 
 
 

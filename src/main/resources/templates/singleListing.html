@@ -64,6 +64,7 @@
                                                     <li><a th:href="@{/profile}">update profile</a ></li>
                                                 </ul>
                                             </li>
+                                            <li shiro:hasPermission="user:normal"><a th:href="@{/feedback.html}">FeedBack</a></li>
 
                                             <li shiro:hasPermission="user:admin">
                                                 <a href="" >manage book <i class="ti-angle-down"></i></a >
@@ -98,7 +99,9 @@
         <!-- header-end -->
 
       <!-- bradcam_area  -->
+
       <div class="bradcam_area bradcam_bg_3">
+
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -141,12 +144,17 @@
                                     </div>
                                 </div>
                             </form>
-                            <!-- begin wwww.htmlcommentbox.com -->
-                            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
-                            <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-                            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1587373272468");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-                            <!-- end www.htmlcommentbox.com -->
+
                         </div>
+                    </div>
+
+                    <div class="single_details">
+                        <!-- begin wwww.htmlcommentbox.com -->
+                        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+                        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1587373272468");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                        <!-- end www.htmlcommentbox.com -->
+
                     </div>
             </div>
         </div>

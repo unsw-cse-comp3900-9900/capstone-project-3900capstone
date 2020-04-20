@@ -36,12 +36,27 @@ public class ShiroConfig {
 
         filterMap.put("/","anon");
         filterMap.put("/index.html","anon");
-        filterMap.put("/listings.html","authc");
         filterMap.put("/blog.html","authc");
-        filterMap.put("/singleBlog.html","perms[admin]");
+        filterMap.put("/singleBlog.html","authc");
         filterMap.put("/elements.html","authc");
         filterMap.put("/logout","logout");
         filterMap.put("/main.html","authc");
+        filterMap.put("/add.html","perms[users:admin]");
+        filterMap.put("/addBook.html","perms[users:admin]");
+        filterMap.put("/analytics.html","anon");
+        filterMap.put("/cart.html","anon");
+        filterMap.put("/changePwd.html","anon");
+        filterMap.put("/confirmation.html","anon");
+        filterMap.put("/contact.html","anon");
+        filterMap.put("/delete.html","perms[users:admin]");
+        filterMap.put("/feedback.html","anon");
+        filterMap.put("/modify.html","anon");
+        filterMap.put("/payment.html","anon");
+        filterMap.put("/profile.html","anon");
+        filterMap.put("/removeBook.html","anon");
+        filterMap.put("/updateBook.html","perms[users:admin]");
+
+
 
 
 

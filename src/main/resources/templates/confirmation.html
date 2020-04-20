@@ -60,6 +60,7 @@
                                                 <li><a th:href="@{/profile}">update profile</a ></li>
                                             </ul>
                                         </li>
+                                        <li shiro:hasPermission="user:normal"><a th:href="@{/feedback.html}">FeedBack</a></li>
 
                                         <li shiro:hasPermission="user:admin">
                                             <a href="" >manage book <i class="ti-angle-down"></i></a >

@@ -69,6 +69,7 @@ public class SearchController {
 
 
         List<Books> booksList = bookService.fuzzyQuery(bookName, author, publisher, offset, limit);
+        List<Books> booksList1 = bookService.queryBooksList(0, 5);
 
 
         List<Books> first = new ArrayList<>();
@@ -89,7 +90,7 @@ public class SearchController {
         model.addAttribute("bks1", first);
         model.addAttribute("bks2", second);
 
-        model.addAttribute("bks", booksList);
+        model.addAttribute("bks", booksList1);
 
         if (booksList.isEmpty())
         {

@@ -63,6 +63,8 @@
                                             <li><a th:href="@{/contact.html}">Contact</a></li>
                                             <li><a th:href="@{/cart}">My Cart</a></li>
 
+                                            <li shiro:hasPermission="user:normal"><a th:href="@{/feedback.html}">FeedBack</a></li>
+
                                             <li><a href="" shiro:hasPermission="admin">manage book <i class="ti-angle-down"></i></a >
                                                 <ul class="submenu">
 

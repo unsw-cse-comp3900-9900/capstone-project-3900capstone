@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 
 <head>
     <meta charset="utf-8">
@@ -37,14 +38,14 @@
         <div id="sticky-header" class="main-header-area">
             <div class="container-fluid ">
                 <div class="header_bottom_border">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-2">
-                            <p style="color: white"> Hi, Yi!</p>
-                        </div>
-                        <div class="col-xl-6 col-lg-7">
+                    <div class="row align-items-center justify-content-end">
+
+                        <div class="col-xl-7 col-lg-7">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
+
+
                                         <li><a th:href="@{/main}">Home</a></li>
                                         <li><a th:href="@{/listings}">Listings</a></li>
 
@@ -59,8 +60,9 @@
                                                 <li><a th:href="@{/profile}">update profile</a ></li>
                                             </ul>
                                         </li>
+                                        <li shiro:hasPermission="user:normal"><a th:href="@{/feedback.html}">FeedBack</a></li>
 
-                                        <li >
+                                        <li shiro:hasPermission="user:admin">
                                             <a href="" >manage book <i class="ti-angle-down"></i></a >
                                             <ul class="submenu">
 
@@ -68,6 +70,7 @@
                                                 <li><a th:href="@{/updateBookPage}">update book</a ></li>
                                             </ul>
                                         </li>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -96,7 +99,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text text-center">
-                    <h3>Order Confirmation</h3>
+                    <h3>Confirmation</h3>
                 </div>
             </div>
         </div>
@@ -110,19 +113,79 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="confirmation_tittle">
-                    <h4>Thank you. Your order has been received.</h4>
+                    <span>Thank you. Your order has been received.</span>
                 </div>
             </div>
             <div class="col-lg-12">
                 <div class="single_confirmation_details">
-                    <h4>order detail</h4>
+                    <h4>order info</h4>
+                    <ul>
+                        <li>
+                            <p>order number</p><span>: 60235</span>
+                        </li>
+                        <li>
+                            <p>data</p><span>: Oct 03, 2020</span>
+                        </li>
+                        <li>
+                            <p>Payment method</p><span>: Bank transfer</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-12">
+            </div>
+            <div class="col-lg-12">
+                <div class="single_confirmation_details">
+                    <h4>shipping Address</h4>
+                    <ul>
+                        <li>
+                            <p>Street</p><span>: 56/8</span>
+                        </li>
+                        <li>
+                            <p>city</p><span>: Sydney</span>
+                        </li>
+                        <li>
+                            <p>Suburb</p><span>: Kensington</span>
+                        </li>
+                        <li>
+                            <p>postcode</p><span>: 2033</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-
-
-
+        <div class="whole-wrap">
+            <div class="container box_1170">
+                <div class="section-top-border">
+                    <!--/*@thymesVar id="list" type="List<Cart>"*/-->
+                    <div th:switch="${list}">
+                        <div>
+                            <h2 th:case="null">Order details</h2>
+                            <div th:case="*">
+                                <table class="table table-striped table-responsive-md">
+                                    <thead>
+                                    <tr>
+                                        <th>Book Title</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+<!--                                    <tr th:each="item : ${list}">-->
+<!--                                        <td th:text="${item.bookName}"></td>-->
+<!--                                        <td>1</td>-->
+<!--                                        <td th:text="${item.price}"></td>-->
+<!--                                    </tr>-->
+<!--                                    </tbody>-->
+                                </table>
+                                <a th:href="@{/logout}" class="genric-btn info radius" style="float:right">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!--================ Blog Area end =================-->
