@@ -26,8 +26,8 @@
     </select>
 
     <select id="addUser" parameterType="Users">
-        insert into user (zId, userName, userPwd, phone, email, department, address)
-        values (#{zId}, #{userName}, #{userPwd}, #{phone}, #{email}, #{department}, #{address})
+        insert into user (zId, userName, userPwd, phone, email, department, address, auth)
+        values (#{zId}, #{userName}, #{userPwd}, #{phone}, #{email}, #{department}, #{address}, #{auth})
     </select>
 
     <select id="updateUser" parameterType="Users">
