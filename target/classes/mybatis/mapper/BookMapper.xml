@@ -117,4 +117,9 @@
     <select id="recommendation" resultType="Books">
         select * from project.books where department = #{department}  LIMIT #{first},#{second}
     </select>
+
+    <select id="queryCartItem" resultType="integer">
+        select numbers from user_books where userId = #{userId} and
+        status = "ordered" and bookId = #{bookId}
+    </select>
 </mapper>
