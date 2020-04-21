@@ -46,6 +46,6 @@ public class UserRealm extends AuthorizingRealm {
         }
 
 
-        return new SimpleAuthenticationInfo(user1, user1.getUserPwd() ,"");
+        #return new SimpleAuthenticationInfo(user1, user1.getUserPwd() ,"");
     }
 }
