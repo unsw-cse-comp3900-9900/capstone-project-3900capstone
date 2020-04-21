@@ -122,7 +122,8 @@
                             <tr>
                                 <th>Book Title</th>
                                 <th>Author</th>
-                                <th>Qty</th>
+                                <th style="width: 40px">Qty</th>
+                                <th></th>
                                 <th>Price</th>
                                 <th></th>
                             </tr>
@@ -130,10 +131,20 @@
                             <tbody>
                             <tr th:each="item : ${list}">
                                 <!--/*@thymesVar id="bookName" type="String"*/-->
-                                <td th:text="${item.bookName}"></td>
-                                <td th:text="${item.author}"></td>
-                                <td th:text="${item.numbers}"></td>
-                                <td th:text="${item.price}"></td>
+                                <td th:text="${item.bookName}" style="padding-top: 20px"></td>
+                                <td th:text="${item.author}" style="padding-top: 20px"></td>
+                                <td th:text="${item.numbers}" style="padding-top: 20px"></td>
+                                <td>
+                                    <table>
+                                        <tr style="background: none; border: none">
+                                            <td style="padding: 0px; border: none"><a th:href="@{/addCopy/(id=${item.bookId})}" class="fa fa-caret-up"></a></td>
+                                        </tr>
+                                        <tr style="background: none; border: none">
+                                            <td style="padding: 0px; border: none"><a th:href="@{/deleteCopy/(id=${item.bookId},ubId=${item.ubId})}" class="fa fa-caret-down"></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td th:text="${item.price}" style="padding-top: 20px"></td>
                                 <td width="174px">
                                     <a th:href="@{/delete/{ubId}(ubId=${item.ubId})}"
                                        class="genric-btn danger radius" style="float: right ">
@@ -142,13 +153,14 @@
                                 </td>
                             </tr>
                             <tr style="background-color: white">
-                                <td>Total: </td>
+                                <td style="padding-top: 20px">Total: </td>
                                 <td></td>
                                 <td></td>
-                                <td th:text="${total}"></td>
                                 <td></td>
+                                <td th:text="${total}" style="padding-top: 20px"></td>                                <td></td>
                             </tr>
                             <tr style="background-color: white">
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
