@@ -36,25 +36,27 @@ public class ShiroConfig {
 
         filterMap.put("/","anon");
         filterMap.put("/index.html","anon");
+        filterMap.put("/singleListing.html","authc,perms[users:normal]");
         filterMap.put("/blog.html","authc");
         filterMap.put("/singleBlog.html","authc");
         filterMap.put("/elements.html","authc");
         filterMap.put("/logout","logout");
         filterMap.put("/main.html","authc");
-        filterMap.put("/add.html","perms[users:admin]");
-        filterMap.put("/addBook.html","perms[users:admin]");
-        filterMap.put("/analytics.html","anon");
-        filterMap.put("/cart.html","anon");
-        filterMap.put("/changePwd.html","anon");
-        filterMap.put("/confirmation.html","anon");
-        filterMap.put("/contact.html","anon");
-        filterMap.put("/delete.html","perms[users:admin]");
-        filterMap.put("/feedback.html","anon");
-        filterMap.put("/modify.html","anon");
-        filterMap.put("/payment.html","anon");
-        filterMap.put("/profile.html","anon");
-        filterMap.put("/removeBook.html","anon");
-        filterMap.put("/updateBook.html","perms[users:admin]");
+        filterMap.put("/add.html","authc,perms[users:admin]");
+        filterMap.put("/addBook.html","authc,perms[users:admin]");
+        filterMap.put("/analytics.html","authc,perms[users:admin]");
+        filterMap.put("/cart.html","authc,perms[users:normal]");
+        filterMap.put("/changePwd.html","authc");
+        filterMap.put("/confirmation.html","authc,perms[users:normal]");
+        filterMap.put("/contact.html","authc,perms[users:normal]");
+        filterMap.put("/delete.html","authc,perms[users:admin]");
+        filterMap.put("/feedback.html","authc,perms[users:normal]");
+        filterMap.put("/modify.html","authc,perms[users:admin]");
+        filterMap.put("/payment.html","authc,perms[users:normal]");
+        filterMap.put("/profile.html","authc");
+        filterMap.put("/removeBook.html","authc,perms[users:admin]");
+        filterMap.put("/updateBook.html","authc,perms[users:admin]");
+        filterMap.put("/listings.html","authc,perms[users:normal]");
 
 
 

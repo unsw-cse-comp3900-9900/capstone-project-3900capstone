@@ -20,5 +20,4 @@ public class Books {
     private int clickTime;
     private String department;
     private Integer adminId;
-
 }
