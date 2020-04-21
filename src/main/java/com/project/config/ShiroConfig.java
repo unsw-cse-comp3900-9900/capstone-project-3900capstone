@@ -36,27 +36,27 @@ public class ShiroConfig {
 
         filterMap.put("/","anon");
         filterMap.put("/index.html","anon");
-        filterMap.put("/singleListing.html","authc,perms[users:normal]");
+        filterMap.put("/singleListing.html","authc");
         filterMap.put("/blog.html","authc");
         filterMap.put("/singleBlog.html","authc");
         filterMap.put("/elements.html","authc");
         filterMap.put("/logout","logout");
         filterMap.put("/main.html","authc");
-        filterMap.put("/add.html","authc,perms[users:admin]");
-        filterMap.put("/addBook.html","authc,perms[users:admin]");
-        filterMap.put("/analytics.html","authc,perms[users:admin]");
-        filterMap.put("/cart.html","authc,perms[users:normal]");
+        filterMap.put("/add.html","authc");
+        filterMap.put("/addBook.html","authc");
+        filterMap.put("/analytics.html","authc");
+        filterMap.put("/cart.html","authc");
         filterMap.put("/changePwd.html","authc");
-        filterMap.put("/confirmation.html","authc,perms[users:normal]");
-        filterMap.put("/contact.html","authc,perms[users:normal]");
-        filterMap.put("/delete.html","authc,perms[users:admin]");
-        filterMap.put("/feedback.html","authc,perms[users:normal]");
-        filterMap.put("/modify.html","authc,perms[users:admin]");
-        filterMap.put("/payment.html","authc,perms[users:normal]");
+        filterMap.put("/confirmation.html","authc");
+        filterMap.put("/contact.html","authc");
+        filterMap.put("/delete.html","authc");
+        filterMap.put("/feedback.html","authc");
+        filterMap.put("/modify.html","authc");
+        filterMap.put("/payment.html","authc");
         filterMap.put("/profile.html","authc");
-        filterMap.put("/removeBook.html","authc,perms[users:admin]");
-        filterMap.put("/updateBook.html","authc,perms[users:admin]");
-        filterMap.put("/listings.html","authc,perms[users:normal]");
+        filterMap.put("/removeBook.html","authc");
+        filterMap.put("/updateBook.html","authc");
+        filterMap.put("/listings.html","authc");
 
 
 

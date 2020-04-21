@@ -36,18 +36,34 @@ public class MainController {
 
         String department = user.getDepartment();
 
-        Books rec1 = bookService.recommendation(department, 0, 1);
-        Books rec2 = bookService.recommendation(department, 1, 1);
-        Books rec3 = bookService.recommendation(department, 2, 1);
-        Books rec4 = bookService.recommendation(department, 3, 1);
+        if(!department.equals(""))
+        {
+            Books rec1 = bookService.recommendation(department, 0, 1);
+            Books rec2 = bookService.recommendation(department, 1, 1);
+            Books rec3 = bookService.recommendation(department, 2, 1);
+            Books rec4 = bookService.recommendation(department, 3, 1);
 
-        model.addAttribute("bk1",rec1);
+            model.addAttribute("bk1",rec1);
 
-        model.addAttribute("bk2",rec2);
+            model.addAttribute("bk2",rec2);
 
-        model.addAttribute("bk3",rec3);
+            model.addAttribute("bk3",rec3);
 
-        model.addAttribute("bk4",rec4);
+            model.addAttribute("bk4",rec4);
+        }
+        else {
+
+            List<Books> booksList = bookService.queryBooksList(0, 4);
+
+            int count = 1;
+            for(Books b : booksList)
+            {
+                  String book = "bk" + count;
+                  model.addAttribute(book, b);
+                  count += 1;
+            }
+
+        }
 
 
         return  "main";

@@ -35,7 +35,7 @@ public class AdminController {
 
         bookService.addBook(new Books(null, bookName, price, 1, detail, publisher, author, null, 0, department, userId));
 
-        bookService.addAllBook(new Books(null, bookName, price, 1, detail, publisher, author, null, 0, department, userId));
+        //bookService.addAllBook(new Books(null, bookName, price, 1, detail, publisher, author, null, 0, department, userId));
 
         model.addAttribute("msg", "Success!");
 

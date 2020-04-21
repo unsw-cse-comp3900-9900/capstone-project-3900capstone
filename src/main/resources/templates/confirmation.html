@@ -47,11 +47,11 @@
 
 
                                         <li><a th:href="@{/main}">Home</a></li>
-                                        <li><a th:href="@{/listings}">Listings</a></li>
+                                        <li shiro:hasPermission="user:normal"><a th:href="@{/listings}">Listings</a></li>
 
-                                        <li><a th:href="@{/analytics}">Analytics</a></li>
+                                        <li shiro:hasPermission="user:admin"><a th:href="@{/analytics}">Analytics</a></li>
 
-                                        <li><a th:href="@{/cart}">My Cart</a></li>
+                                        <li shiro:hasPermission="user:normal"><a th:href="@{/cart}">My Cart</a></li>
 
                                         <li><a href="" >profile <i class="ti-angle-down"></i></a >
                                             <ul class="submenu">
@@ -60,6 +60,7 @@
                                                 <li><a th:href="@{/profile}">update profile</a ></li>
                                             </ul>
                                         </li>
+
                                         <li shiro:hasPermission="user:normal"><a th:href="@{/feedback.html}">FeedBack</a></li>
 
                                         <li shiro:hasPermission="user:admin">

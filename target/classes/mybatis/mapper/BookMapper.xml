@@ -33,13 +33,13 @@
 
 
     <select id="addBook" parameterType="Books">
-        insert into books (bookName, price, bookCounts, detail, publisher, author, photoAddress, clickTime, classId, adminId)
-        values (#{bookName}, #{price}, #{bookCounts}, #{detail}, #{publisher}, #{author}, #{photoAddress}, #{clickTime}, #{classId}, #{adminId})
+        insert into books (bookName, price, bookCounts, detail, publisher, author, photoAddress, clickTime, department, adminId)
+        values (#{bookName}, #{price}, #{bookCounts}, #{detail}, #{publisher}, #{author}, #{photoAddress}, #{clickTime}, #{department}, #{adminId})
     </select>
 
     <select id="updateBook" parameterType="Books">
         update books set bookName = #{bookName}, price = #{price}, detail = #{detail}, publisher = #{publisher}, author = #{author},
-        photoAddress = #{photoAddress}, clickTime = #{clickTime}, classId = #{classId}, adminId = #{adminId}
+        photoAddress = #{photoAddress}, clickTime = #{clickTime}, department = #{department}, adminId = #{adminId}
         where bookId = #{bookId}
     </select>
 
@@ -71,13 +71,13 @@
 <!--    for allBook table   -->
 
     <select id="addAllBook" parameterType="Books">
-        insert into project.allBooks (bookName, price, bookCounts, detail, publisher, author, photoAddress, clickTime, classId, adminId)
-        values (#{bookName}, #{price}, #{bookCounts}, #{detail}, #{publisher}, #{author}, #{photoAddress}, #{clickTime}, #{classId}, #{adminId})
+        insert into project.allBooks (bookName, price, bookCounts, detail, publisher, author, photoAddress, clickTime, department, adminId)
+        values (#{bookName}, #{price}, #{bookCounts}, #{detail}, #{publisher}, #{author}, #{photoAddress}, #{clickTime}, #{department}, #{adminId})
     </select>
 
     <select id="updateAllBook" parameterType="Books">
         update project.allBooks set bookName = #{bookName}, price = #{price}, detail = #{detail}, publisher = #{publisher}, author = #{author},
-        photoAddress = #{photoAddress}, clickTime = #{clickTime}, classId = #{classId}, adminId = #{adminId}
+        photoAddress = #{photoAddress}, clickTime = #{clickTime}, department = #{department}, adminId = #{adminId}
         where bookId = #{bookId}
     </select>
 
