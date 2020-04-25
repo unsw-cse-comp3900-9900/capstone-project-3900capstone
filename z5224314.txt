@@ -15,3 +15,15 @@ We split work into frontend and backend, finished working on user authentication
 
 Week 6
 We decide to change our work division from frontend/backend to each one work on a single part. I started working on cart page.
+
+Week 7
+Finished cart page. Update database upon successful purchase from user.
+
+Week 8
+Start working on analytics page. Added top-viewed chart and top-sold chart for admin to view.
+
+Week 9
+Finished analytic page. Added a feature in cart page to allow users to adjust quantity of their order.
+
+Week 10
+Added form validation for payment. Update inventory stock checking before purchase.
