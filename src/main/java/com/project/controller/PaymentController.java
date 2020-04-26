@@ -82,6 +82,7 @@ public class PaymentController {
             updateStock(copies, id);
             updateCart(id, currUser);
         }
+        available.clear();
         return "redirect:/confirmation.html";
     }
 }
