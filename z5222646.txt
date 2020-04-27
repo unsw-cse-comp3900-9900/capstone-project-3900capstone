@@ -35,3 +35,16 @@ WEEK06
 After the mentoring session on wednesday, instead of dividing works by backend and frontend,
 we splitted up our work by pages.
 i.e one work on page for admin to add book, cart page, and successful payment detail page.
+
+WEEK 07
+Completed payment(dummy) page.
+
+WEEK 08
+Added comment feature in single listing page and feedback page.
+
+WEEK 09
+Prepared for demo.
+Updated paged based on feedback from Rachid.
+
+WEEK 10
+Done a rehearsal before the final demo.
