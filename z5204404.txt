@@ -23,3 +23,11 @@ Week 5
 i design the login websit
 week 6
 i work on the admin manage book such as add book, remove book.
+week 7
+complete the admin funication
+week 8
+i work on the book detials.
+week 9 
+complete the book detials, and update the feedback from Rachid.
+week 10
+Done a rehearsal before the final demo.
