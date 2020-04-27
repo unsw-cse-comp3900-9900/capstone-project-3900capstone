@@ -120,7 +120,7 @@
                         <div class="row">
                             <div class="col-75">
                                 <div class="container">
-                                    <form action="/action_page.php">
+                                    <form th:action="@{/payment}" method="post">
                                         <div th:if="${message}" style="background-color: #e1f7e7; padding: 10px; border-right: 3px;">
                                             <table style="width: 1100px">
                                                 <tr th:if="${message == 'some'}">
@@ -131,7 +131,7 @@
                                                         <a th:href="@{/onlyAvailable}" class="genric-btn info radius">Yes</a>
                                                     </td>
                                                     <td>
-                                                        <a th:href="@{/main.html}" class="genric-btn danger radius">No</a>
+                                                        <a th:href="@{/cart}" class="genric-btn danger radius">No</a>
                                                     </td>
                                                 </tr>
                                                 <tr th:if="${message == 'all'}">
@@ -139,7 +139,7 @@
                                                         Books in your order are currently out of stock, we are sorry for the inconvenience!
                                                     </td>
                                                     <td style="text-align: center">
-                                                        <a th:href="@{/main.html}" class="genric-btn info radius">Ok</a>
+                                                        <a th:href="@{/cart}" class="genric-btn info radius">Ok</a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -153,19 +153,22 @@
                                                             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required oninvalid="this.setCustomValidity('Enter full name here')"
+                                                            oninput="this.setCustomValidity('')">
                                                         </td>
                                                         <td>
                                                             <label for="email"><i class="fa fa-envelope"></i> Email</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="email" name="email" placeholder="john@example.com">
+                                                            <input type="text" id="email" name="email" placeholder="john@example.com" required oninvalid="this.setCustomValidity('Enter a valid email here, ex@abc.xyz')"
+                                                                   oninput="this.setCustomValidity('')" pattern="\w+[@].+[.].+">
                                                         </td>
                                                         <td>
                                                             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                                                            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required oninvalid="this.setCustomValidity('Enter address here')"
+                                                                   oninput="this.setCustomValidity('')">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -173,19 +176,22 @@
                                                             <label for="city"><i class="fa fa-institution"></i> City</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="city" name="city" placeholder="New York">
+                                                            <input type="text" id="city" name="city" placeholder="New York" required oninvalid="this.setCustomValidity('Enter city here')"
+                                                                   oninput="this.setCustomValidity('')">
                                                         </td>
                                                         <td>
                                                             <label for="state">State</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="state" name="state" placeholder="NY">
+                                                            <input type="text" id="state" name="state" placeholder="NY" required oninvalid="this.setCustomValidity('Enter state here')"
+                                                                   oninput="this.setCustomValidity('')">
                                                         </td>
                                                         <td>
                                                             <label for="zip">Zip</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="zip" name="zip" placeholder="10001">
+                                                            <input type="text" id="zip" name="zip" placeholder="10001" required oninvalid="this.setCustomValidity('Enter zip here')"
+                                                                   oninput="this.setCustomValidity('')">
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -214,19 +220,22 @@
                                                             <label for="cname">Name on Card</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                                            <input type="text" id="cname" name="cardname" placeholder="John More Doe" required oninvalid="this.setCustomValidity('Enter name here')"
+                                                                   oninput="this.setCustomValidity('')">
                                                         </td>
                                                         <td>
                                                             <label for="ccnum">Credit card number</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required oninvalid="this.setCustomValidity('Enter card number here')"
+                                                                   oninput="this.setCustomValidity('')" pattern="^\d{4}[-]\d{4}[-]\d{4}[-]\d{4}$">
                                                         </td>
                                                         <td>
                                                             <label for="expmonth">Exp Month</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                                                            <input type="text" id="expmonth" name="expmonth" placeholder="September" required oninvalid="this.setCustomValidity('Enter expire month here')"
+                                                                   oninput="this.setCustomValidity('')">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -234,13 +243,15 @@
                                                             <label for="expyear">Exp Year</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                                            <input type="text" id="expyear" name="expyear" placeholder="2018" required oninvalid="this.setCustomValidity('Enter expire year here')"
+                                                                   oninput="this.setCustomValidity('')" pattern="^\d{4}$">
                                                         </td>
                                                         <td>
                                                             <label for="cvv">CVV</label>
                                                         </td>
                                                         <td>
-                                                            <input type="text" id="cvv" name="cvv" placeholder="352">
+                                                            <input type="text" id="cvv" name="cvv" placeholder="352" required oninvalid="this.setCustomValidity('Enter CVV here')"
+                                                                   oninput="this.setCustomValidity('')" pattern="^\d{3}$">
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -259,8 +270,8 @@
                                         </label>
                                         <!-- checkout button -->
 
-                                        <input type="submit" value="Continue to checkout" class="btn">
-                                        <a th:href="@{/payment}" class="genric-btn info radius" style="width:111.25px; float:right">Checkout</a>
+<!--                                        <input type="submit" value="Continue to checkout" class="btn">-->
+                                        <button class="genric-btn info radius" style="width:111.25px; float:right">Checkout</button>
                                     </form>
                                 </div>
                             </div>

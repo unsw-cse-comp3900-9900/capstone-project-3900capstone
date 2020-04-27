@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Directory</title>
+    <title>Confirmation</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -100,7 +100,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text text-center">
-                    <h3>Confirmation</h3>
+                    <h3>Thank you. Your order has been received.</h3>
                 </div>
             </div>
         </div>
@@ -108,192 +108,18 @@
 </div>
 <!--/ bradcam_area  -->
 
-<!--================Blog Area =================-->
-<section class="confirmation_part section_padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="confirmation_tittle">
-                    <span>Thank you. Your order has been received.</span>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="single_confirmation_details">
-                    <h4>order info</h4>
-                    <ul>
-                        <li>
-                            <p>order number</p><span>: 60235</span>
-                        </li>
-                        <li>
-                            <p>data</p><span>: Oct 03, 2020</span>
-                        </li>
-                        <li>
-                            <p>Payment method</p><span>: Bank transfer</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-12">
-            </div>
-            <div class="col-lg-12">
-                <div class="single_confirmation_details">
-                    <h4>shipping Address</h4>
-                    <ul>
-                        <li>
-                            <p>Street</p><span>: 56/8</span>
-                        </li>
-                        <li>
-                            <p>city</p><span>: Sydney</span>
-                        </li>
-                        <li>
-                            <p>Suburb</p><span>: Kensington</span>
-                        </li>
-                        <li>
-                            <p>postcode</p><span>: 2033</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="whole-wrap">
-            <div class="container box_1170">
-                <div class="section-top-border">
-                    <!--/*@thymesVar id="list" type="List<Cart>"*/-->
-                    <div th:switch="${list}">
-                        <div>
-                            <h2 th:case="null">Order details</h2>
-                            <div th:case="*">
-                                <table class="table table-striped table-responsive-md">
-                                    <thead>
-                                    <tr>
-                                        <th>Book Title</th>
-                                        <th>Qty</th>
-                                        <th>Price</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-<!--                                    <tr th:each="item : ${list}">-->
-<!--                                        <td th:text="${item.bookName}"></td>-->
-<!--                                        <td>1</td>-->
-<!--                                        <td th:text="${item.price}"></td>-->
-<!--                                    </tr>-->
-<!--                                    </tbody>-->
-                                </table>
-                                <a th:href="@{/logout}" class="genric-btn info radius" style="float:right">Checkout</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--================ Blog Area end =================-->
-
-<!-- footer start -->
-<footer class="footer">
-    <div class="footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <div class="footer_logo">
-                            <a th:href="@{#}">
-                                <img src="img/footer_logo.png" alt="">
-                            </a>
-                        </div>
-                        <p>
-                            Esteem spirit temper too say adieus who <br> direct esteem. It esteems luckily or <br>
-                            picture placing drawing.
-                        </p>
-                        <div class="socail_links">
-                            <ul>
-                                <li>
-                                    <a th:href="@{#}">
-                                        <i class="ti-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a th:href="@{#}">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a th:href="@{#}">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a th:href="@{#}">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Services
-                        </h3>
-                        <ul>
-                            <li><a th:href="@{#}">SEO/SEM </a></li>
-                            <li><a th:href="@{#}">Web design </a></li>
-                            <li><a th:href="@{#}">Ecommerce</a></li>
-                            <li><a th:href="@{#}">Digital marketing</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-6 col-lg-2">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Useful Links
-                        </h3>
-                        <ul>
-                            <li><a th:href="@{#}">About</a></li>
-                            <li><a th:href="@{#}">Blog</a></li>
-                            <li><a th:href="@{#}"> Contact</a></li>
-                            <li><a th:href="@{#}">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Subscribe
-                        </h3>
-                        <form th:action="@{#}" class="newsletter_form">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                        <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
-                            luckily.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copy-right_text">
-        <div class="container">
-            <div class="footer_border"></div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <p class="copy_right text-center">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="@{https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!--/ footer end  -->
-
+<!--&lt;!&ndash;================Blog Area =================&ndash;&gt;-->
+<!--<section class="confirmation_part section_padding">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-12">-->
+<!--                <div class="confirmation_tittle">-->
+<!--                    <span>Thank you. Your order has been received.</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <!-- JS here -->
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>

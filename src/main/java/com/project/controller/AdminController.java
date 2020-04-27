@@ -27,13 +27,14 @@ public class AdminController {
                           @RequestParam("publisher") String publisher,
                           @RequestParam("author") String author,
                           @RequestParam("department") String department,
+                          @RequestParam("count") Integer bookCounts,
                           Model model) {
 
         Users user = (Users) SecurityUtils.getSubject().getPrincipal();
 
         Integer userId = user.getUserId();
 
-        bookService.addBook(new Books(null, bookName, price, 1, detail, publisher, author, null, 0, department, userId));
+        bookService.addBook(new Books(null, bookName, price, bookCounts, detail, publisher, author, null, 0, department, userId));
 
         //bookService.addAllBook(new Books(null, bookName, price, 1, detail, publisher, author, null, 0, department, userId));
 
@@ -124,6 +125,7 @@ public class AdminController {
                              @RequestParam(required = false,name = "detail") String detail,
                              @RequestParam(required = false, name = "publisher") String publisher,
                              @RequestParam(required = false, name = "author") String author,
+                             @RequestParam(required = false, name = "count") Integer bookCounts,
                              Model model) {
 
         Users user = (Users) SecurityUtils.getSubject().getPrincipal();
@@ -151,7 +153,7 @@ public class AdminController {
 
 
 
-        Integer integer = bookService.updateBook(new Books(id, book.getBookName(), price, book.getBookCounts(), detail,
+        Integer integer = bookService.updateBook(new Books(id, book.getBookName(), price, bookCounts, detail,
                 publisher, author, null, book.getClickTime(), book.getDepartment(), user.getUserId()));
 
 

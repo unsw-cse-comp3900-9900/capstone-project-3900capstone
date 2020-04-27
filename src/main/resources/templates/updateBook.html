@@ -128,6 +128,7 @@
                                 <th style="text-align: center" th:scope="col"> Publisher of Book</th>
                                 <th style="text-align: center" th:scope="col"> Price </th>
                                 <th style="text-align: center" th:scope="col"> Viewed Time </th>
+                                <th style="text-align: center" th:scope="col"> Book amount </th>
                                 <th  th:scope="col"> Modify </th>
 
                             </tr>
@@ -140,6 +141,7 @@
                                 <td style="text-align: center" th:text="${bk.getPublisher()}"> </td>
                                 <td style="text-align: center" th:text="${bk.getPrice()}"> </td>
                                 <td style="text-align: center" th:text="${bk.getClickTime()}"> </td>
+                                <td style="text-align: center" th:text="${bk.getBookCounts()}"> </td>
 
                                 <td>
                                     <a class="btn btn-sm btn-primary"  th:href="@{/modifyPage/}+${bk.getBookId()}">Update</a>

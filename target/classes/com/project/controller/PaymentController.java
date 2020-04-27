@@ -30,7 +30,7 @@ public class PaymentController {
         int unavailable = 0;
         List<HashMap> cartList = bookService.queryCartByUserId(currUser.getUserId());
         for (HashMap item : cartList) {
-            if (checkAvailable((Integer) item.get("bookId"))) {
+            if (checkAvailable((Integer) item.get("bookId"), (Integer) item.get("numbers"))) {
                 available.put((Integer) item.get("bookId"), (Integer) item.get("numbers"));
             }
             else {
@@ -59,10 +59,12 @@ public class PaymentController {
         return updateDb(currUser);
     }
 
-    private boolean checkAvailable(Integer id) {
+    private boolean checkAvailable(Integer id, Integer qty) {
         Books book = bookService.queryBooksById(id);
-        if (book == null) return false;
-        return book.getBookCounts() > 0;
+        if (book == null) {
+            return false;
+        }
+        return book.getBookCounts() >= qty;
     }
 
     private void updateStock(Integer copies, Integer id) {
@@ -77,10 +79,10 @@ public class PaymentController {
         for (Map.Entry<Integer, Integer> temp : available.entrySet()) {
             Integer id = temp.getKey();
             Integer copies = temp.getValue();
-            System.out.println(id);
             updateStock(copies, id);
             updateCart(id, currUser);
         }
+        available.clear();
         return "redirect:/confirmation.html";
     }
 }
