@@ -1,0 +1,34 @@
+Week1
+Organize a group for project3.
+
+Week2
+Creat an account and design a general architecture.
+
+Week3
+Finish the proposal and epics.
+
+Week4
+Be moved to current group because there are only two members in past group and focus on the project 7.
+Hold a group meeting, split the work into front-end and back-end two parts and assign the work. I am responsble to back-end part.
+Finish creating databases.
+
+Week5
+Finish login and signup part.
+
+Week6
+Finish search part and build the page can show the search result.
+
+Week7
+Improve the single listing page, and add one filter part to offer another way to search a book.
+
+Week8
+Improve the search code since tutor want a result that if user tap in a character the result will show the books whose title starts with the character. 
+
+
+Week9
+Work on recommendation part, which can show the books based on which department the user from.
+
+Week10
+Practice before the demo.
+
+Notice: My code part is commited by Yi Zhang since we live and work together and I did not know the commit record is one part of marking standard, thanks for understand.
