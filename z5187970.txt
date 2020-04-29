@@ -1,0 +1,33 @@
+Week 1
+Formed a group that decided to do the project 3, we only have 2 members.
+
+Week 2
+Design what to do and created jira account.
+
+Week 3
+Working on the proposal, set up the epics.
+
+Week 4 
+Changed to the recent group, changed the project to project 7 (E-commerce).
+Had a group meeting talk about the new project, split the work of the front end and backend.
+Design the database tables and finish the database file.
+
+Week 5
+Set up the backend environment, which is springboot and managed by maven.
+Finish the login, signup and authentication part.
+
+Week 6
+Work on listing page, implemented showing the book lists in the page.
+
+Week 7
+Finish the change password part of the website, which let users to change their user details.
+
+Week 8
+Finish the profile part of the website, users can see their user details and change the details.
+
+Week 9
+Split the admin functions and user functions, admin can only see and use the admin functions in the website and so as the users.
+Combine all the project and prepare for the presentation
+
+Week 10
+Finished a rehearsal before the final demo.
